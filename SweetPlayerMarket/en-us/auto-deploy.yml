@@ -1,0 +1,79 @@
+# Whether to enable auto-listing items feature
+# Only need to configure on one sub-server, the task check will run on the server where it is configured
+enable: false
+# Whether to output debug information
+debug: false
+
+# Asynchronous timer check granularity (ticks)
+# These are simple mathematical operations and run asynchronously, so they won't take up much performance
+check-period: 20
+
+# Auto-listing configuration list
+# The plugin stores persistent data such as timer rounds in auto-deploy.data.yml, do not modify the data file
+auto-deploy-properties:
+  # Example auto-listing configuration, named example, you can copy below to add more configurations
+  # The name should not contain the character dot (.)
+  example:
+    # Default timer settings can be roughly understood as executing once a day at 8:00
+    schedule-time:
+      # Start time, defaults to local time New Year's Day 2026 at 8:00 AM if not filled
+      start-time: '2026-01-01 08:00:00'
+      # End time, defaults to local time 2099 if not filled
+      end-time: '2099-12-31 23:59:59'
+      # Timer interval, defaults to 24 hours if not filled
+      period-duration: '24h'
+      # If this round has missed the target round and exceeds this time, it will give up execution and wait for the next round
+      giving-up-gap: '5m'
+      # Allow total successful run rounds, -1 is unlimited
+      success-run-round: -1
+    # Condition checks before each timer execution
+    conditions:
+      # Expression condition, leave blank (no input or use empty string) to not execute expression judgment
+      # Can use PAPI variables (without specifying player), such as %server_online%
+      # Documentation: https://ezylang.github.io/EvalEx/references/operators.html
+      # Example: '%server_online% > 0'
+      eval: ''
+      # Probability condition, what is the probability of passing the judgment
+      # Can use decimal format (1.0=100%) or percentage format, values exceeding 100% will be automatically limited
+      # Using 100% or 1.0 means no probability judgment
+      rate: '100%'
+      # Week condition, only which days of the week can pass the judgment, case-insensitive
+      # Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday
+      # Divided into positive week conditions and negative week conditions, positive weeks have no exclamation mark (!), negative weeks have an exclamation mark (!)
+      # When there are no positive weeks, all weeks are automatically filled, then negative weeks are parsed to get the week condition list
+      # In other words:
+      #   [ !Monday ] means only Monday does not pass judgment
+      #   [] means judgment passes regardless of the day of the week
+      weeks: [ Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday ]
+      # Month condition, only which months can pass the judgment
+      # Same as week conditions, divided into positive and negative conditions, not elaborated
+      months: [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 ]
+    # Market item configuration
+    # If input parameters are incorrect, causing listing to fail, logs will be printed to console with reasons
+    market-item:
+      # Item type, SELL for selling, BUY for buying
+      type: SELL
+      # Currency used for the item
+      currency:
+        # Currency type
+        type: Vault
+        # Item price, supports PAPI variable replacement first, supports min to max using random numbers
+        price: 100.0 to 150.0
+      # Item quantity, supports PAPI variable replacement first, supports min to max using random numbers
+      amount: 1 to 3
+      # What tag to use, supports PAPI variable replacement (leave blank to be determined by the plugin, usually default)
+      tag: ''
+      # Custom seller name, supports PAPI variable replacement, leave blank to use the name in messages.yml by default
+      custom-owner-name: ''
+      # Item source, supports PAPI variable replacement
+      # Item - use vanilla item
+      # mythic:item - use MythicMobs item
+      # ce:namespace:item - use CraftEngine item
+      item-source: STONE
+      # Item expiration time, supports PAPI variable replacement, defaults to 24h if not filled
+      outdate-time: '24h'
+    # Commands executed after successful listing
+    # Supports using item variables after listing, same variables as in menus
+    success-commands:
+      # Use SweetMessages plugin to broadcast listing notification
+      - '[console]smsgs m @a &7[&e&lGlobal Market&r&7] &aThe system has listed the sample item to global market, price&e %price% %currency%&a, go check it out!'

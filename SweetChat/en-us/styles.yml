@@ -1,0 +1,24 @@
+
+# Assign default message styles by permission
+# Permission is sweetchat.style.key_name
+style-by-permission:
+  # sweetchat.style.default
+  default:
+    priority: 1000
+  # sweetchat.style.vip
+  vip:
+    # Matching priority, smaller values match first, default 1000
+    priority: 999
+    # (Optional) Add message color, available color names (BLUE, YELLOW, etc.) or hexadecimal colors (#FF06B5)
+    color: '#D5FFFF'
+    # (Optional) Add message decoration styles, you can add the following values
+    # OBFUSCATED, BOLD, STRIKETHROUGH, UNDERLINED, ITALIC
+    decoration: []
+    # (Optional) Custom style, leave empty to not add custom style, if added, it will override the above styles, you can use gradient and other formats
+    # For example '<gradient:#D5FFFF:#D5BBBB>', non-style characters will be added to the front of the message, PAPI variables are supported
+    custom: ''
+  svip:
+    priority: 998
+    color: '#FFFFD5'
+    decoration: []
+    custom: ''

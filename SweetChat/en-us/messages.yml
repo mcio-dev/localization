@@ -1,0 +1,8 @@
+messages:
+  chat-exception: '&eFailed to send chat message, logs have been output to console, please contact server administrator'
+  commands:
+    reload:
+      config: '&aConfiguration file has been reloaded'
+      database: '&aDatabase has been reloaded and reconnected'
+  player:
+    not-online: Player %player% is not online (or does not exist)

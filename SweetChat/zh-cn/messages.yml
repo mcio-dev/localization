@@ -1,0 +1,8 @@
+messages:
+  chat-exception: '&e聊天消息发送失败，日志已输出到控制台，请联系服务器管理员'
+  commands:
+    reload:
+      config: '&a配置文件已重载'
+      database: '&a已重载并重新连接数据库'
+  player:
+    not-online: 玩家 %player% 不在线 (或不存在)

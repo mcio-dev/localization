@@ -1,0 +1,18 @@
+messages:
+  commands:
+    debug:
+      'on': '&fDebug mode has been &aenabled'
+      'off': '&fDebug mode has been &cdisabled'
+    reload: '&aConfiguration files have been reloaded'
+    prefeb:
+      notfound: '&ePrefab &b%s &enot found'
+      given: '&eGiven player&b %player% &eprefab&b %prefeb% &e(total &b%count% &epieces)'
+      no-amount: '&ePlease enter a correct amount'
+    help:
+    - '&d&lSweetDrops&r &eHelp Commands'
+    - '&f/sd debug &eEnable or disable debug mode'
+    - '&f/sd prefeb <prefab ID> [amount] [player] &eGive someone a specified amount of prefabs'
+    - '&f/sd reload &eReload configuration files'
+  player:
+    only: '&eThis command can only be executed by a player'
+    notfound: '&ePlayer &b%s &eis not online'

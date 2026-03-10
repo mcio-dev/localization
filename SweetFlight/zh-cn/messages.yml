@@ -1,0 +1,56 @@
+flight:
+  world-not-allow: '&e当前世界不允许飞行'
+  loc-not-allow: '&e当前区域不允许飞行'
+command:
+  check:
+    header-other: '&a玩家&e %player% &a的飞行组如下:'
+    group-infinite: '&b  %group% &f无限时间'
+    header-yourself: '&a你的飞行组如下:'
+    standard: '&a每日基础飞行时间:&e %time%'
+    remaining: '&a当前剩余飞行时间:&e %time%'
+    remaining-extra: '&f-&a 额外:&e %time%'
+    remaining-status: '&f-&a 基础:&e %time%'
+    group-add: '&b  %group% &f+%time%'
+    group-set: '&b  %group% &f=%time%'
+  add:
+    not-time: '&e请输入大于0秒的时间'
+    success: '&a已为玩家&e %player% &a增加&e %added% &a的额外飞行时间，增加后为&e %time%'
+  reload:
+    config: '&a配置文件已重载'
+    database: '&a已重新连接数据库'
+  set:
+    success: '&a已设置玩家&e %player% &a的额外飞行时间为&e %time%'
+    not-time: '&e请输入大于等于0秒的时间'
+  'off':
+    success: '&f飞行已&e关闭'
+  'on':
+    success: '&f飞行已&a开启'
+  reset:
+    success: '&a已重置玩家&e %player% &a的今日飞行时间为&e %time%'
+time-not-enough:
+  join: '&e飞行时间已耗尽'
+  command: '&e飞行时间已耗尽'
+  timer: '&e飞行时间已耗尽'
+  start: '&e飞行时间已耗尽'
+player:
+  only: '&e这个命令只能由玩家执行'
+  data-invalid-start: '&c数据异常，请联系服务器管理员'
+  not-online: '&e玩家不在线 &7(或不存在)'
+  data-not-found: '&e玩家数据异常'
+help:
+  normal:
+  - '&9&lSweetFlight &e&l帮助命令&r'
+  - '&f/sf on &7开启飞行'
+  - '&f/sf off &7关闭飞行'
+  - '&f/sf toggle &7切换飞行状态'
+  - '&f/sf check &7查看飞行时间'
+  admin:
+  - '&9&lSweetFlight &e&l帮助命令&r'
+  - '&f/sf on [玩家] &7开启飞行'
+  - '&f/sf off [玩家] &7关闭飞行'
+  - '&f/sf toggle [玩家] &7切换飞行状态'
+  - '&f/sf check [玩家] &7查看自己或别人的飞行时间'
+  - '&f/sf reset <玩家> &7重置玩家今日的基础飞行时间'
+  - '&f/sf set <玩家> <时间> &7设置玩家的额外飞行时间'
+  - '&f/sf add <玩家> <时间> &7为玩家增加额外飞行时间'
+no-permission: '&c你没有执行此操作的权限'

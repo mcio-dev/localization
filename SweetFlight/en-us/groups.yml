@@ -1,0 +1,19 @@
+# When this option is added, jump to the corresponding file
+# goto: '/path/to/groups.yml'
+
+# Flight group configuration. Players with permission sweet.flight.group.<group name> are in this group
+# When a player has multiple permissions, groups with smaller priority values are matched first
+groups:
+  # Default group. You can copy this to add more groups
+  default:
+    # Priority, do not duplicate
+    priority: 1000
+    # Daily flight time. Units can be h (hours), m (minutes), s (seconds)
+    # infinite means unlimited
+    time: 5m
+  vip:
+    priority: 999
+    time: +1h
+  infinite:
+    priority: 0
+    time: infinite

@@ -1,0 +1,56 @@
+flight:
+  world-not-allow: '&eFlight is not allowed in the current world'
+  loc-not-allow: '&eFlight is not allowed in the current area'
+command:
+  check:
+    header-other: '&aPlayer&e %player% &aflight groups:'
+    group-infinite: '&b  %group% &fInfinite time'
+    header-yourself: '&aYour flight groups:'
+    standard: '&aDaily base flight time:&e %time%'
+    remaining: '&aCurrent remaining flight time:&e %time%'
+    remaining-extra: '&f-&a Extra:&e %time%'
+    remaining-status: '&f-&a Base:&e %time%'
+    group-add: '&b  %group% &f+%time%'
+    group-set: '&b  %group% &f=%time%'
+  add:
+    not-time: '&ePlease enter a time greater than 0 seconds'
+    success: '&aAdded&e %added% &aextra flight time to player&e %player%, total now &e%time%'
+  reload:
+    config: '&aConfiguration files reloaded'
+    database: '&aReconnected to database'
+  set:
+    success: '&aSet player&e %player% &aextra flight time to&e %time%'
+    not-time: '&ePlease enter a time greater than or equal to 0 seconds'
+  'off':
+    success: '&fFlight has been &edisabled'
+  'on':
+    success: '&fFlight has been &aenabled'
+  reset:
+    success: '&aReset player&e %player% &atoday''s flight time to&e %time%'
+time-not-enough:
+  join: '&eFlight time exhausted'
+  command: '&eFlight time exhausted'
+  timer: '&eFlight time exhausted'
+  start: '&eFlight time exhausted'
+player:
+  only: '&eThis command can only be executed by a player'
+  data-invalid-start: '&cData error, please contact server administrator'
+  not-online: '&ePlayer is not online &7(or does not exist)'
+  data-not-found: '&ePlayer data error'
+help:
+  normal:
+  - '&9&lSweetFlight &e&lHelp Commands&r'
+  - '&f/sf on &7Enable flight'
+  - '&f/sf off &7Disable flight'
+  - '&f/sf toggle &7Toggle flight status'
+  - '&f/sf check &7Check flight time'
+  admin:
+  - '&9&lSweetFlight &e&lHelp Commands&r'
+  - '&f/sf on [player] &7Enable flight'
+  - '&f/sf off [player] &7Disable flight'
+  - '&f/sf toggle [player] &7Toggle flight status'
+  - '&f/sf check [player] &7Check your own or others'' flight time'
+  - '&f/sf reset <player> &7Reset player''s daily base flight time'
+  - '&f/sf set <player> <time> &7Set player''s extra flight time'
+  - '&f/sf add <player> <time> &7Add extra flight time to player'
+no-permission: '&cYou do not have permission to perform this operation'

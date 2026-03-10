@@ -1,0 +1,20 @@
+tips:
+  invalid-template: '&e输入的模板名 %s&r &e无效'
+  reload-database: '&a已重新连接到数据库'
+  invalid-title: '&e请输入标题内容'
+  bungeecord:
+    not-supported: '&e类型 %type% 暂不支持 BungeeCord 广播'
+    no-players: '&eBungeeCord 广播要求至少一名玩家在线'
+  invalid-selector: '&e输入的消息接收者 %s&r &e无效'
+  help:
+  - '&b&lSweetMessages 帮助&r'
+  - '&f/smsgs message <接收者> [选项] <消息> &e发送聊天消息'
+  - '&f/smsgs actionbar <接收者> [选项] <消息> &e发送 ActionBar 消息'
+  - '&f/smsgs title <接收者> [选项] <标题\n副标题> &e发送标题消息'
+  - '&f/smsgs bossbar <接收者> [选项] <文字> &e发送Boss血条消息'
+  - '&7关于命令选项的用法，请前往<u><hover:show_text:打开文档网址><click:open_url:https://plugins.mcio.dev/docs/messages/commands>插件文档</click></hover></u>查看'
+  - '&f/smsgs template <接收者> <模板名> &e发送配置的模板消息'
+  - '&f/smsgs reload &e重载配置文件'
+  invalid-bossbar: '&e请输入血条文字内容'
+  invalid-content: '&e请输入消息内容'
+  reload: '&a配置文件已重载'

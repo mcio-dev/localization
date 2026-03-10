@@ -1,0 +1,23 @@
+# Redirect this configuration file to a path, if this is set, the following configurations are invalid
+#goto: '/path/to/currencies.yml'
+
+# Custom currency specified by variables
+#
+# Warning: If you need to add support for new currency plugins, please submit a compatibility request to the plugin author. This configuration is only a temporary solution.
+# Due to the fact that the deduction command does not include a "success" result, there may be a currency duplication vulnerability. Please bear the consequences.
+#
+# Use 'custom:key_name' format in actual configuration and listing
+# Requires permission 'sweet.playermarket.create.currency.custom.key_name' to use
+custom-currencies:
+  example:
+    # Display name
+    name: 'Coins'
+    # Use variables to get currency amount
+    # If it cannot be converted to a real number, it will take 0 to avoid unexpected problems
+    get: '%vault_eco_balance%'
+    # Commands to give and take currency
+    # Where %money% is the original amount, %money_int% is the integer amount
+    give:
+      - '[console]money give %player_name% %money%'
+    take:
+      - '[console]money take %player_name% %money%'

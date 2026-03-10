@@ -1,0 +1,81 @@
+# Available in which worlds
+worlds:
+  - world
+# Which blocks to mine to trigger drops
+blocks:
+  - BEDROCK
+# Required tools for mining, leave empty to not restrict tools
+# Vanilla items use their ID directly, e.g., DIAMOND_PICKAXE
+# MythicMobs items use mythic:itemID, e.g., mythic:ExampleItem
+# MMOItems items use mmo:itemType:itemID, e.g., mmo:Tools:EXAMPLE_ITEM
+tools: []
+# Require appropriate tool for mining to trigger drops
+# For example, ores can only be mined with pickaxes, etc.
+require-preferred-tool: false
+# Required enchantments for mining tools, leave empty to not restrict
+# Format: enchantment:level or enchantment, no level means no level restriction
+# 1.13+ uses vanilla enchantment IDs, for 1.12.2 and below refer to:
+# https://helpch.at/docs/1.12.2/org/bukkit/enchantments/Enchantment.html
+# Vanilla examples:
+#   Require Sharpness I     sharpness:1
+#   Require Sharpness       sharpness
+# EcoEnchants examples:
+#   Require Aura I          aura:1
+#   Require Aura            aura
+enchantments: []
+# Enchantments that cannot be used for mining, leave empty to not restrict
+# This option is independent of enchantments, only need to fill in enchantment name, no level required
+banned-enchantments:
+  - silk_touch
+# Drop cancellation settings
+cancel:
+  # Whether to cancel all vanilla drops regardless of circumstances
+  all: false
+  # Whether to cancel vanilla drops if probability check is successful and items are dropped
+  if-drop-any: false
+# Players with this permission will have drops automatically placed in inventory, comment to disable this feature
+perm-to-inventory: sweet.drops.auto
+# Which enchantments cause drops to be automatically placed in inventory
+# Format same as enchantments
+enchantments-to-inventory:
+  - binding_curse
+# When inventory is full during auto-pickup, overflow items disappear instead of dropping near player
+# With this option enabled, if 0 items are actually given to the player, command list execution will be blocked
+overflow-disappear: false
+# Drop item settings, format as follows: <> required parameters, [] optional parameters
+#   Vanilla format:          mc <probability> <itemID> [quantity] [end]; [command] [text]
+#   Prefab format:           prefeb <probability> <prefabID> [quantity] [end]; [command] [text]
+#   MythicMobs item format:  mythic <probability> <itemID> [quantity] [end]; [command] [text]
+# Probability has two formats:
+#   Decimal format: <value>        e.g., 0.5 represents 50%
+#   Percentage format: <value>%    e.g., 50%
+# Quantity defaults to 1 if not filled, can use these formats when filling:
+#   Fixed quantity: <number>          e.g., 1
+#   Random quantity: <lower>-<upper>  e.g., 1-5
+# Optional parameter end: if filled, when this item's probability check succeeds, remaining items will skip probability checks and be considered failed
+# Optional parameter command: if filled, when this item's probability check succeeds, execute the corresponding command list in commands-pool
+# Optional parameter text: if filled, %text% in command list will be replaced with this value
+items:
+  - mc 0.1 netherite_ingot 1-5 end; example Netherite Ingot
+  - mc 0.1 gold_ingot 1-5
+# Fortune settings
+fortune:
+  # Rounding method: ceil (round up), floor (round down), round (round to nearest)
+  rounding: ceil
+  # Fortune level item quantity multipliers, can use random ranges like 1.0-1.2
+  # Levels without specific multipliers default to 1.0
+  multiples:
+    # Level 0 means no Fortune enchantment
+    0: 1.0
+    1: 1.0
+    2: 1.0
+    3: 1.0
+# Command pool
+# [console] Execute as console
+# [player] Execute as player
+# [message] Chat message
+# All support PAPI variables. Specially, %text% variable is explained above, %amount% represents the quantity of items obtained, %fortune% represents the Fortune level
+# Multiple command lists with different names can be added to the command pool for use in items
+commands-pool:
+  example:
+    - '[message]&eYou obtained &b%text%&fx%amount% from the mineral'

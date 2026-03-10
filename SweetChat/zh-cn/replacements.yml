@@ -1,0 +1,78 @@
+
+# 消息替换配置
+message-replacements:
+  # 展示物品
+  item-display:
+    # 显示格式
+    format: '&7[&e%item%&7]'
+    # 每个格子仅替换一次，重复输入相同格子将不会替换后面输入的
+    one-slot-only-replace-once: true
+    # 玩家输入什么时，获取哪个格子的物品
+    input:
+      '%i': HAND
+      '%o': OFF_HAND
+      '%1': HOTBAR_1
+      '%2': HOTBAR_2
+      '%3': HOTBAR_3
+      '%4': HOTBAR_4
+      '%5': HOTBAR_5
+      '%6': HOTBAR_6
+      '%7': HOTBAR_7
+      '%8': HOTBAR_8
+      '%9': HOTBAR_9
+  # 替换变量
+  placeholders:
+    # 每个变量仅替换一次
+    one-key-only-replace-once: false
+    # 玩家输入什么时，替换为相应文字，带有 PAPI 和完整 MiniMessage 支持
+    input:
+      '%pos': '&7[&e%player_x%&7, &e%player_y%&7, &e%player_z%&7]'
+    # 当什么正则表达式匹配时，替换为相应 Component，带有 PAPI 和完整 MiniMessage 支持
+    # 使用 $0 代表匹配的完整字符串，$1、$2 等代表匹配后的分组
+    regex:
+      - regex: 'https?://[A-Za-z0-9._/\\%&*!#@~():;?=-]+'
+        content: '&b[&e&l链接&r&b]'
+        hover-text:
+          - '&e打开链接: &b&n$0'
+        click:
+          action: OPEN_URL
+          value: '$0'
+      - regex: '/?res tp ([A-Za-z0-9\u4e00-\u9fa5\-_.]+)'
+        content: '&b[&e&l领地:$1&r&b]'
+        hover-text:
+          - '&f点击传送到领地: &e$1'
+        click:
+          action: RUN_COMMAND
+          value: '/res tp $1'
+  # @功能
+  at:
+    # 是否启用该功能
+    enable: true
+    # 正则表达式匹配格式
+    # 如果需要中文名支持，请参考上方的领地示例
+    regex: '@?([A-Za-z0-9\-_]+)'
+    # 提取玩家名
+    player-name:
+      match: '$1'
+      min-length: 1
+      max-length: 24
+    # 在线玩家来源，当某个来源无效时，使用 SERVER 代替
+    # SERVER - 当前子服在线玩家
+    # BUNGEE_CORD - 通过 BC 消息通道定时获取
+    # TAB - 通过 TAB 插件获取
+    player-source: TAB
+    # 在消息中的显示格式
+    # 仅支持变量 %at_target% 代表被 @ 玩家名
+    format:
+      content: '<aqua><b>@%at_target%'
+      hover-text:
+        - '&f在聊天中提到了 &e%at_target%'
+      click:
+        action: SUGGEST_COMMAND
+        value: '/msg %at_target% '
+    # 当目标玩家看到 @ 时，执行操作
+    # 插件会将发送者、被 @ 玩家等信息加入到 insertion 中方便传递
+    # 如果聊天消息是跨服的，仅会执行目标子服中配置的操作
+    target-actions:
+      - '[actionbar]&e&l%sender% &b&l在聊天中提到了你'
+      - '[sound]entity.cat.ambient, 1.0, 1.0'

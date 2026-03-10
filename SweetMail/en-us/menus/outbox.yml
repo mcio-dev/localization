@@ -1,0 +1,92 @@
+# Interface title, supports PAPI
+title: '&0Outbox (%page%/%max_page% pages)'
+title-other: '&0%target%''s Outbox (%page%/%max_page% pages)'
+# Interface layout, 9 icons per row, maximum 6 rows
+inventory:
+  - '全黑黑黑黑黑黑黑黑'
+  - '读黑格格格格格格黑'
+  - '发黑格格格格格格黑'
+  - '　黑格格格格格格黑'
+  - '上黑格格格格格格黑'
+  - '下黑黑黑黑黑黑黑黑'
+# Do not warn about missing required item names in the background when reloading
+ignored: []
+# Required items
+items:
+  全:
+    material: ITEM_FRAME
+    display: '&e&lInbox All Mails'
+    lore:
+      - ''
+      - '  &fView all mails in inbox  '
+      - ''
+      - '&aLeft Click&7 | &fView this category'
+  读:
+    material: PAINTING
+    display: '&e&lInbox Unread Mails'
+    lore:
+      - ''
+      - '  &fView unread mails in inbox  '
+      - ''
+      - '&aLeft Click&7 | &fView this category'
+      - '&bRight Click&7 | &fMark all as read'
+  发:
+    material: CHEST
+    display: '&e&lOutbox'
+    lore:
+      - ''
+      - '  &fView all sent mails  '
+      - ''
+      - '&aLeft Click &7| &fView this category'
+  上:
+    material: PAPER
+    display: '&e&lPrevious Page'
+  下:
+    material: PAPER
+    display: '&e&lNext Page'
+  格:
+    redirect: 无
+    display: '&e&l%title%'
+    lore-parts:
+      part1:
+      - '&fSender: &e%sender%'
+      - '&fReceiver: &e%receiver%'
+      - '&fSend Time: &e%time%'
+      - '&fContent: &e%count% characters (Total %pages% pages)'
+      part1-1:
+      - '&fAttachments: '
+      part2:
+      - ''
+      - '&aLeft Click&7 | &fView mail content'
+      - '&bRight Click&7 | &fView attachments'
+      - '!!&eQ Key&7 | &fDelete mail &c(No confirmation and irreversible)'
+    # lore composition parts
+    # In addition to the above defined lore-parts, you can also use
+    # attachments (attachment list)
+    # content (mail content)
+    # content;prefix (mail content, but each line adds a prefix)
+    # short_content;prefix;length;ellipsis (mail content, prefix same as content, if content exceeds specified length will show ellipsis, ellipsis defaults to ... if not entered)
+    lore-content:
+      - part1
+      - short_content;&7;64
+      - part1-1
+      - attachments
+      - part2
+    lore-format:
+      # %receiver% part - display content when there are multiple receivers
+      and-so-on: '%player% and %count% other players'
+      # attachments part - display template
+      attachment-item:
+        - '  &8● &e%attachment%'
+      attachment-and-so-on:
+        max-count: 7
+        lore:
+          - '  &8(and &7%count% &8other attachments)'
+# Optional items
+other-items:
+  黑:
+    material: BLACK_STAINED_GLASS_PANE
+    #custom-model: 10000
+    display: '&0'
+  无:
+    material: AIR

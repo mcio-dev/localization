@@ -1,0 +1,140 @@
+title: 'List to Sell Shop'
+inventory:
+  - '框框框框框框框框框'
+  - '框　物　数价币　框'
+  - '框　　　量格确　框'
+  - '返框框框框框框框框'
+main-icons:
+  物:
+    material: BARRIER
+    display: '&e&lSelect Item'
+    lore:
+      - ''
+      - '  &fIn the inventory below'
+      - '  &aLeft-click&f to select the item you want to sell  '
+      - ''
+  确:
+    material: SLIME_BALL
+    display: '&e&lConfirm'
+    lore:
+      - ''
+      - '  &fItem: &e%item%  '
+      - '  &fPrice: &e%price% %currency%  '
+      - '  &fSell: &e%count% units&7 (total %total_count% items)  '
+      - '  &fEarn: &e%total_money% %currency%  '
+      - '  &fFee: &e%create_cost_money% %create_cost_currency%  '
+      - limit messages
+      - ''
+      - '&aLeft Click &7| &fConfirm listing'
+    limit-messages:
+      header: ['']
+      line: '  %message%  '
+other-icons:
+  框:
+    material: WHITE_STAINED_GLASS_PANE
+    display: '&f'
+  返:
+    material: LIGHT_BLUE_STAINED_GLASS_PANE
+    display: '&e&lReturn'
+    lore:
+      - ''
+      - '  &fReturn to global market homepage  '
+      - ''
+    left-click-commands:
+      - '[player]playermarket open'
+  数:
+    material: CHEST
+    display: '&eTotal Units'
+    lore:
+      - ''
+      - '  &fTotal Units: &e%count%  '
+      - ''
+      - '&aLeft Click&7 | &fTotal Units+1　　　 &7(Shift +5)'
+      - '&bRight Click&7 | &fTotal Units-1　　　 &7(Shift -5)'
+      - '&eQ Key&7 | &fManually set total units'
+    left-click-commands:
+      - '[count:amount]+1'
+    shift-left-click-commands:
+      - '[count:amount]+5'
+    right-click-commands:
+      - '[count:amount]-1'
+    shift-right-click-commands:
+      - '[count:amount]-5'
+    drop-commands:
+      - '[count:amount]input'
+  量:
+    material: OAK_PLANKS
+    display: '&eItems per Unit'
+    lore:
+      - ''
+      - '  &fItems per Unit: &e%item_count%  '
+      - ''
+      - '&aLeft Click&7 | &fItems per Unit+1 &7(Shift +5)'
+      - '&bRight Click&7 | &fItems per Unit-1 &7(Shift -5)'
+      - '&eQ Key&7 | &fManually set items per unit'
+    left-click-commands:
+      - '[count:item]+1'
+    shift-left-click-commands:
+      - '[count:item]+5'
+    right-click-commands:
+      - '[count:item]-1'
+    shift-right-click-commands:
+      - '[count:item]-5'
+    drop-commands:
+      - '[count:item]input'
+  价:
+    material: GLOWSTONE_DUST
+    display: '&aIncrease Price'
+    lore:
+      - ''
+      - '  &fPrice: &e%price% %currency%  '
+      - ''
+      - '&aLeft Click&7 | &fPrice+1 &7(Shift +10)'
+      - '&bRight Click&7 | &fPrice+5 &7(Shift +100)'
+      - '&eQ Key&7 | &fManually set price'
+    left-click-commands:
+      - '[price]+1'
+    shift-left-click-commands:
+      - '[price]+10'
+    right-click-commands:
+      - '[price]+5'
+    shift-right-click-commands:
+      - '[price]+100'
+    drop-commands:
+      - '[price]input'
+  格:
+    material: REDSTONE
+    display: '&cDecrease Price'
+    lore:
+      - ''
+      - '  &fPrice: &e%price% %currency%  '
+      - ''
+      - '&aLeft Click&7 | &fPrice-1 &7(Shift -10)'
+      - '&bRight Click&7 | &fPrice-5 &7(Shift -100)'
+      - '&eQ Key&7 | &fManually set price'
+    left-click-commands:
+      - '[price]-1'
+    shift-left-click-commands:
+      - '[price]-10'
+    right-click-commands:
+      - '[price]-5'
+    shift-right-click-commands:
+      - '[price]-100'
+    drop-commands:
+      - '[price]input'
+  币:
+    material: GOLD_INGOT
+    display: '&eSet Currency'
+    lore:
+      - ''
+      - '  &fCurrency: &e%currency%  '
+      - ''
+      - '&aLeft Click &7| &fSwitch currency type'
+      - '&eShift+Left Click &7| &fSpecify to use coins to sell'
+      - '&dShift+Right Click &7| &fSpecify to use points to sell'
+    left-click-commands:
+      - '[currency]switch::Vault,PlayerPoints'
+    shift-left-click-commands:
+      - '[currency]set::Vault'
+    shift-right-click-commands:
+      - '[currency]set::PlayerPoints'

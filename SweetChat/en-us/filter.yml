@@ -1,0 +1,30 @@
+# Text pool example
+text-pools:
+  mask: ['*']
+# Action pool example
+action-pools:
+  unfriendly:
+    - '[message]&eYour chat message contains unfriendly content'
+
+# Chat filter configuration
+# Multiple chat filters can be added, judged in order
+# There are some Chinese swear words in default config, you can replace it with your language.
+filters:
+    # When containing any of the following substrings
+  - contains: ['傻逼服务器']
+    # When any of the following regular expressions match
+    regex: []
+    # Punishment when filter matches
+    # 'REPLACE text_pool_id' Replace with random text from the specified text pool
+    # 'REPLACE_RAW text' Replace with the specified text
+    # 'REPLACE_CHAR text_pool_id' Replace each character with random text from the specified text pool
+    # 'REPLACE_CHAR_RAW text' Replace each character with the specified text
+    # 'REPLACE_MESSAGE text_pool_id' Replace the entire chat message with random text from the specified text pool
+    # 'REPLACE_MESSAGE_RAW text' Replace the entire chat message with the specified text
+    # 'ACTION action_pool_id' Disallow sending chat message and execute action
+    # 'DISALLOW' Disallow sending chat message without additional action
+    punishment: 'REPLACE_MESSAGE_RAW This server is really fun, I''ll invite my friends'
+  - contains: ['傻逼', '傻狗', '煞笔']
+    punishment: 'REPLACE_RAW cutie'
+  - contains: ['对号入座？', '对号入座?']
+    punishment: 'REPLACE_MESSAGE_RAW The number you have dialed is turned off'

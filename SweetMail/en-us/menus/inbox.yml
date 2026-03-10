@@ -1,0 +1,133 @@
+# Interface title, supports PAPI
+title-all: '&0Inbox All (%page%/%max_page% pages)'
+title-all-other: '&0%target%''s Inbox All (%page%/%max_page% pages)'
+title-unread: '&0Inbox Unread (%page%/%max_page% pages)'
+title-unread-other: '&0%target%''s Inbox Unread (%page%/%max_page% pages)'
+# Interface layout, 9 icons per row, maximum 6 rows
+inventory:
+  - '全黑黑黑黑黑黑黑黑'
+  - '读黑格格格格格格黑'
+  - '发黑格格格格格格黑'
+  - '　黑格格格格格格黑'
+  - '上黑格格格格格格黑'
+  - '下黑黑黑黑黑黑黑领'
+# Do not warn about missing required item names in the background when reloading
+ignored: []
+# Required items
+items:
+  全:
+    material: ITEM_FRAME
+    display: '&e&lInbox All Mails'
+    lore:
+      - ''
+      - '  &fView all mails in inbox  '
+      - ''
+      - '&aLeft Click&7 | &fView this category'
+  读:
+    material: PAINTING
+    display: '&e&lInbox Unread Mails'
+    lore:
+      - ''
+      - '  &fView unread mails in inbox  '
+      - ''
+      - '&aLeft Click&7 | &fView this category'
+      - '&bRight Click&7 | &fMark all as read'
+      - '&7(Unclaimed attachments are still considered unread)'
+  发:
+    material: CHEST
+    display: '&e&lOutbox'
+    lore:
+      - ''
+      - '  &fView all sent mails  '
+      - ''
+      - '&aLeft Click &7| &fView this category'
+  上:
+    material: PAPER
+    display: '&e&lPrevious Page'
+  下:
+    material: PAPER
+    display: '&e&lNext Page'
+  领:
+    material: CHEST
+    display: '&e&lClaim Attachments'
+    redirect: 黑
+    lore:
+      - ''
+      - '  &fClaim all unclaimed attachments  '
+      - ''
+      - '&aLeft Click&7 | &fClaim attachments'
+  格:
+    redirect: 无
+    display: '&e&l%title%'
+    # lore parts, can be freely defined, used in lore-content below
+    lore-parts:
+      part1:
+      - '&fSender: &e%sender%'
+      - '&fReceiver: &e%receiver%'
+      - '&fSend Time: &e%time%'
+      - '&fContent: &e%count% characters (Total %pages% pages)'
+      part1-1:
+      - '&fAttachments: '
+      part2:
+      - ''
+      - '&aLeft Click&7 | &fView mail content'
+      - '&bRight Click&7 | &fView attachments'
+    # lore composition parts
+    # In addition to the above defined lore-parts, you can also use
+    # read (read)
+    # attachments (attachment list)
+    # attachments_outdate (attachment expiration time prompt)
+    # bottom_attachments (attachment claim options)
+    # content (mail content)
+    # content;prefix (mail content, but each line adds a prefix)
+    # short_content;prefix;length;ellipsis (mail content, prefix same as content, if content exceeds specified length will show ellipsis, ellipsis defaults to ... if not entered)
+    lore-content:
+      - read
+      - part1
+      - short_content;&7;64
+      - part1-1
+      - attachments
+      - attachments_outdate
+      - part2
+      - bottom_attachments
+    # Configuration in lore-content
+    lore-format:
+      # read part - read
+      read:
+        - '&f'
+      # read part - unread
+      unread:
+        - '&d&l                         Unread Mail'
+      # %receiver% part - display content when there are multiple receivers
+      and-so-on: '%player% and %count% other players'
+      # attachments part - display template
+      attachment-item:
+        - '  &8● &e%attachment%'
+      attachment-and-so-on:
+        max-count: 7
+        lore:
+          - '  &8(and &7%count% &8other attachments)'
+      # bottom_attachments part
+      attachment:
+        # Available for claiming
+        available:
+          - '&eShift+Left Click&7 | &fClaim attachments'
+        # Already claimed
+        unavailable: []
+      # attachments_outdate part
+      attachments_outdate:
+        # Time format
+        format: 'yyyy-MM-dd HH:mm:ss'
+        # Attachment expiration time - set
+        time:
+          - '&fAttachment valid until &e%time%'
+        # Attachment expiration time - permanent
+        infinite: []
+# Optional items
+other-items:
+  黑:
+    material: BLACK_STAINED_GLASS_PANE
+    #custom-model: 10000
+    display: '&0'
+  无:
+    material: AIR

@@ -1,0 +1,27 @@
+# Add goto option to use a configuration file at the specified path as database configuration
+# After adding, all other options can be deleted
+# goto: 'path/to/database.yml'
+
+# Database type, optional sqlite or mysql
+type: sqlite
+# Table name prefix
+table_prefix: 'sweetflight_'
+# JDBC parameters
+query: 'useSSL=false&allowPublicKeyRetrieval=true&verifyServerCertificate=false&serverTimezone=UTC'
+# Connection pool settings
+hikari:
+  max_lifetime: 120000
+  idle_timeout: 10000
+  connection_timeout: 5000
+  minimum_idle: 8
+  maximum_pool_size: 36
+# MySQL settings
+mysql:
+  host: localhost
+  port: 3306
+  user: 'root'
+  pass: 'root'
+  database: minecraft
+# SQLite settings
+sqlite:
+  file: 'database.db'

@@ -1,0 +1,120 @@
+messages:
+  command:
+    send:
+      no-template: '&eMail template %template% does not exist'
+      failed: '&eMail sending failed: %error%'
+      wrong-arguments: '&eWrong arguments %error%'
+      no-players: '&eThe input receiver expression filtered out 0 players'
+      success: '&aSuccessfully sent template mail %template% %parameters% to %players_count% players'
+    reload-database: '&aDatabase configuration has been reloaded, database reconnected'
+    reload: '&aConfiguration files have been reloaded &7(To reload database, use &f/mail reload database&7)'
+    extensive:
+      chat-entry: '&7-&f %player_name%'
+      calculating: Calculating extensive recipient list, please wait…
+      not-set: You have not set extensive recipients yet
+      chat-header: '&aExtensive recipient expression&e %formula% &ecalculated&e %players_count% &eplayers, top&e %count%
+        &anames are as follows:'
+      empty: '&aExtensive recipient expression&e %formula% &ecalculated&c 0 &eplayers'
+    players:
+      book-header: Total %players_count% players
+      empty: '&aReceiver expression&e %formula% &ecalculated&c 0 &eplayers'
+      chat-header: '&aReceiver expression&e %formula% &ecalculated&e %players_count% &eplayers, top&e %count%
+        &anames are as follows:'
+      book-entry: '- <hover:show_text:%player_uuid%>%player_name%</hover>'
+      chat-entry: '&7-&f <hover:show_text:%player_uuid%>%player_name%</hover>'
+    timed:
+      cancel:
+        fail: '&cTimed sending sequence &e%id% not found'
+        success: '&aSuccessfully canceled timed sending sequence &e%id%'
+      info:
+        not-found: '&cTimed sending sequence &e%id% not found'
+        display:
+        - '&fTimed sending sequence: &e%id%'
+        - '&fSender: &e%sender%'
+        - '&fSender display: &e%senderDisplay%'
+        - '&fReceiver: &e%receiver%'
+        - '&fExtensive receivers: &e%advReceivers%'
+        - '&bPlease check timed_draft.yml for other information'
+  draft:
+    attachments:
+      money:
+        lore:
+        - ''
+        - '  &fAmount: &e%money%'
+        icon: GOLD_NUGGET
+        add:
+          not-enough: '&7[&e&lMail&7] &eYou don''t have enough gold coins'
+          fail: '&7[&e&lMail&7] &ePlease enter a real number greater than 0'
+          prompt-cancel: cancel
+          prompt-tips: '&7[&e&lMail&7] &bPlease send&e "attachment gold amount"&b value in chat &7(enter&c cancel &7to cancel adding attachment)'
+        name: '&e&lGold Coins'
+      item:
+        title: Please click the item in inventory to add as attachment
+        banned: '&eThis item is prohibited from being added as an attachment'
+        display-with-amount: '%item%&7 x%amount%'
+        display: '%item%'
+      command:
+        prompt-cancel: cancel
+        fail: '&7[&e&lMail&7] &eIncorrect format, should be &fIcon,Display Name,Command&e, for example&f PAPER,10 Gold Coins,money give
+          %player_name% 10'
+        prompt-tips: '&7[&e&lMail&7] &bPlease send&e "console command attachment"&b value in chat &7(format &fIcon,Display Name,Command&7, for example&f
+          PAPER,10 Gold Coins,money give %player_name% 10 &7. Enter&c cancel &7to cancel adding attachment)'
+      remove-lore:
+      - ''
+      - '&aLeft Click &7| &fDelete and take this attachment'
+      remove-lore-admin:
+      - ''
+      - '&aLeft Click &7| &fDelete and take this attachment'
+      - '&eShift+Left Click &7| &fDelete'
+      use-illegal-deny: '&bAttachment &e%name% &bhas invalid data, cannot be claimed, please contact administrator.'
+    no-receivers: '&eYou have not set any receivers, cannot send mail!'
+    selected-icon-lore:
+    - '&a&lSelected'
+    tips-date-time: yyyy-MM-dd HH:mm:ss
+    open-tips: '&fYour draft will be saved for &e%hours% &fhours, expires at&e %time% &f, please do not store valuable items in attachments. Draft expiration time will refresh when reopening the draft editor.'
+    cursor-no-book: '&eTo overwrite mail body content, you should first&b pick up&e a&b book and quill&e in your inventory with mouse pointer, then&a left click&e the body content icon.'
+    online:
+      no-player: '&ePlayer not found'
+    no-money: '&eYou don''t have enough gold coins&7(%price%)&e to send mail'
+    money-format: '%.1f'
+    sent: '&aMail sent successfully'
+    send-with-adv-receivers: '&aSending mail… &fSending time may be longer, please wait patiently, this depends on the total number of players on the server.'
+    cant-send-to-yourself: '&eYou can''t send mail to yourself!'
+    outdate-tips: '&fYour draft was last edited at&e %time% &fand has expired and been automatically reset.'
+  legacy:
+    1-7-10:
+      need-right-click: '&eDue to version limitations, you need to press&b right mouse button&e to browse the body'
+      need-empty-hand: '&eIn creative mode, to avoid item loss, you need to&b have empty hands&e to browse the body'
+  date-time: yyyy-MM-dd HH:mm:ss
+  prefix: '&7[&e&lMail&7] &a'
+  join:
+    text: '&eYou have &b%count% &eunread mails &7[&aClick to view&7]'
+    command: /sweetmail inbox unread
+    text-online: '&eYou have a new unread mail &7[&aClick to view&7]'
+    hover:
+    - '&eClick to open inbox'
+  help:
+    player:
+    - '&e&lMail System &8<Required Parameters> [Optional Parameters]'
+    - '  &f/mail draft &8-- &3Create or edit a draft'
+    - '  &f/mail outbox &8-- &3Open outbox'
+    - '  &f/mail inbox &7[&fall&7/&funread&7] &8-- &3Open inbox&7(Defaults to unread)'
+    admin:
+    - '&cAdministrator Commands'
+    - '  &f/mail outbox <player> &8-- &eOpen outbox for someone'
+    - '  &f/mail inbox <all/unread> <player> &8-- &eOpen inbox for someone'
+    - '  &f/mail admin outbox <player> &8-- &eOpen player''s outbox'
+    - '  &f/mail admin inbox <all/unread> <player> &8-- &eOpen player''s inbox'
+    - '  &f/mail admin timed <sequence> &8-- &eView timed sending mail sequence information'
+    - '  &f/mail admin cancel <sequence> &8-- &eCancel timed sending mail sequence'
+    - '  &f/mail save <template> &8-- &eSave your draft as a mail template'
+    - '  &f/mail send <template> <receiver expression> [parameters...] &8-- &eSend mail based on configured template (see documentation for receiver format)'
+    - '  &f/mail players <receiver expression> [--book/-b] &8-- &eCalculate final player list for receiver expression (for testing)'
+    - '  &f/mail reload database &8-- &3Reload database'
+    - '  &f/mail reload &8-- &3Reload configuration files'
+  outbox:
+    deleted: '&aSuccessfully deleted mail %title%&7 (%uuid%) from %player%'
+  inbox:
+    attachments-fail: '&eAttachment claiming failed! Please contact administrator to check details'
+    read-all: '&aAll unread mails have been marked as read'
+    attachments-outdated: '&eThis mail''s attachments have expired and cannot be claimed'

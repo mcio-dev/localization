@@ -1,0 +1,82 @@
+commands:
+  help:
+    operator:
+    - ''
+    - '&e&lSweetLocks &b&l收费门帮助&r'
+    - '&a要创建一个收费门，需要在铁门上方放置一个告示牌，内容如下'
+    - '  &7第1行    &f%lock%'
+    - '  &7第2行留空'
+    - '  &7第3行留空'
+    - '  &7第4行留空'
+    - '&a与记忆中的不同? 收费门已完全使用菜单来配置，'
+    - '&a无需再记忆繁琐的创建格式!'
+    - '&a创建收费门需要&e %money% &a金币'
+    - '&bShift+右键&a 点击木牌即可打开编辑菜单'
+    - ''
+    - '&f/locks reload &e重载插件配置文件'
+    - ''
+    player:
+    - ''
+    - '&e&lSweetLocks &b&l收费门帮助&r'
+    - '&a要创建一个收费门，需要在铁门上方放置一个告示牌，内容如下'
+    - '  &7第1行    &f%lock%'
+    - '  &7第2行留空'
+    - '  &7第3行留空'
+    - '  &7第4行留空'
+    - '&a与记忆中的不同? 收费门已完全使用菜单来配置，'
+    - '&a无需再记忆繁琐的创建格式!'
+    - '&a创建收费门需要&e %money% &a金币'
+    - '&bShift+右键&a 点击木牌即可打开编辑菜单'
+    - ''
+  reload: '&7[&b收费门&7]&a 配置文件已重载.'
+door:
+  has-money: '&7[&a收费门&7]&e 你的账户上有金币，不能进入这个收费门.'
+  owner-notice: '&7[&b收费门&7] &f玩家&e %player% &f进入了你的收费门 &7(%world%, %x%, %y%, %z%)&f，你因此获得&e
+    %money%金币 &7(税收 %tax%金币)&f.'
+  have-left: '&7[&a收费门&7]&f 你离开了&e %player% &f的收费门.'
+  information:
+  - ''
+  - '  &b&l收费门信息&r'
+  - '  &f创建者: &e%player%'
+  - '  &f价格: &e%price%金币'
+  - '  &f标志:'
+  - flags
+  - ''
+  entering: '&7[&a收费门&7]&f 这是&e %player% &f的收费门，按下&e Shift+右键 &f花费&e %price% &f金币进入.'
+  money-not-enough: '&7[&a收费门&7]&e 你没有足够的金币进入这个收费门.'
+  too-far: '&7[&a收费门&7]&e 你离得太远了，靠近点再试试'
+  has-items: '&7[&a收费门&7]&e 你的身上有物品，不能进入这个收费门.'
+  has-potions: '&7[&a收费门&7]&e 你的身上有药水效果，不能进入这个收费门.'
+  flag: '  &8● &f%flag%'
+  owner-notice-no-tax: '&7[&b收费门&7] &f玩家&e %player% &f进入了你的收费门 &7(%world%, %x%, %y%,
+    %z%)&f，你因此获得&e %money%金币&f.'
+  can-not-leave: '&7[&a收费门&7]&e 这个收费门不能离开.'
+  can-not-enter: '&7[&a收费门&7]&e 这个收费门不能进入.'
+  leaving: '&7[&a收费门&7]&f 这是&e %player% &f的收费门，按下&e Shift+右键 &f离开.'
+  solid-blocked: '&7[&a收费门&7]&e 门外有方块阻挡，无法通过.'
+  have-entered: '&7[&a收费门&7]&f 你花费&e %price%金币&f 进入了&e %player% &f的收费门.'
+  information-owner:
+  - ''
+  - '  &b&l收费门信息&r'
+  - '  &f创建者: &e%player%'
+  - '  &f价格: &e%price%金币'
+  - '  &f标志:'
+  - flags
+  - '  &bShift+右键 &f点击告示牌编辑'
+  - ''
+  have-entered-owner: '&7[&a收费门&7]&f 你进入了&e %player% &f的收费门.'
+create:
+  need-door: '&7[&b收费门&7]&e 需要将告示牌贴在铁门上方才可创建收费门.'
+  success: '&7[&b收费门&7]&a 收费门创建成功!&e Shift+右键 &a点击告示牌以编辑收费门.'
+  need-wall-sign: '&7[&b收费门&7]&e 需要将告示牌贴在墙上才可创建收费门.'
+  money-not-enough: '&7[&b收费门&7]&e 你没有足够的金币来创建收费门! 需要&b %money% &e金币.'
+reach:
+  not-number: '&7[&b收费门&7]&e 距离的格式不正确.'
+  min-limited: '&7[&b收费门&7]&e 超出了最小距离限制，最小 %reach% 格.'
+  max-limited: '&7[&b收费门&7]&e 超出了最大距离限制，最大 %reach% 格.'
+price:
+  max-limited: '&7[&b收费门&7]&e 超出了最大价格限制，最大 %money% 金币.'
+  min-limited: '&7[&b收费门&7]&e 超出了最小价格限制，最小 %money% 金币.'
+  not-number: '&7[&b收费门&7]&e 价格的格式不正确.'
+viewer-title: 容器预览
+no-permission: '&c你没有进行此操作的权限.'

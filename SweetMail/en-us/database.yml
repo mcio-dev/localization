@@ -1,0 +1,16 @@
+# Database configuration
+database:
+  # Database type:
+  # sqlite - Use SQLite database (mail.db), does not support cross-server
+  # mysql - Use MySQL database
+  type: sqlite
+  host: localhost
+  port: 3306
+  user: root
+  pass: root
+  database: minecraft
+  table_prefix: sweetmail_
+  mysql_version: 8
+
+# Add extra dependencies
+extra-libraries: []

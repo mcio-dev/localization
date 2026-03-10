@@ -1,0 +1,82 @@
+commands:
+  help:
+    operator:
+    - ''
+    - '&e&lSweetLocks &b&lPaid Door Help&r'
+    - '&aTo create a paid door, place a sign above the iron door with the following content:'
+    - '  &7Line 1    &f%lock%'
+    - '  &7Line 2 leave blank'
+    - '  &7Line 3 leave blank'
+    - '  &7Line 4 leave blank'
+    - '&aDifferent from what you remember? Paid doors now use menus for configuration,'
+    - '&aNo need to remember complex creation formats anymore!'
+    - '&aCreating a paid door costs&e %money% &acoins'
+    - '&bShift+Right Click&a the sign to open the edit menu'
+    - ''
+    - '&f/locks reload &eReload plugin configuration files'
+    - ''
+    player:
+    - ''
+    - '&e&lSweetLocks &b&lPaid Door Help&r'
+    - '&aTo create a paid door, place a sign above the iron door with the following content:'
+    - '  &7Line 1    &f%lock%'
+    - '  &7Line 2 leave blank'
+    - '  &7Line 3 leave blank'
+    - '  &7Line 4 leave blank'
+    - '&aDifferent from what you remember? Paid doors now use menus for configuration,'
+    - '&aNo need to remember complex creation formats anymore!'
+    - '&aCreating a paid door costs&e %money% &acoins'
+    - '&bShift+Right Click&a the sign to open the edit menu'
+    - ''
+  reload: '&7[&bPaid Door&7]&a Configuration files reloaded.'
+door:
+  has-money: '&7[&aPaid Door&7]&e You have coins in your account, cannot enter this paid door.'
+  owner-notice: '&7[&bPaid Door&7] &fPlayer&e %player% &fentered your paid door &7(%world%, %x%, %y%, %z%)&f, you earned&e
+    %money% coins &7(tax %tax% coins)&f.'
+  have-left: '&7[&aPaid Door&7]&f You left&e %player% &f''s paid door.'
+  information:
+  - ''
+  - '  &b&lPaid Door Information&r'
+  - '  &fCreator: &e%player%'
+  - '  &fPrice: &e%price% coins'
+  - '  &fFlags:'
+  - flags
+  - ''
+  entering: '&7[&aPaid Door&7]&f This is&e %player% &f''s paid door, press&e Shift+Right Click &fto spend&e %price% &fcoins to enter.'
+  money-not-enough: '&7[&aPaid Door&7]&e You don''t have enough coins to enter this paid door.'
+  too-far: '&7[&aPaid Door&7]&e You are too far away, please get closer and try again.'
+  has-items: '&7[&aPaid Door&7]&e You have items on you, cannot enter this paid door.'
+  has-potions: '&7[&aPaid Door&7]&e You have potion effects, cannot enter this paid door.'
+  flag: '  &8● &f%flag%'
+  owner-notice-no-tax: '&7[&bPaid Door&7] &fPlayer&e %player% &fentered your paid door &7(%world%, %x%, %y%,
+    %z%)&f, you earned&e %money% coins&f.'
+  can-not-leave: '&7[&aPaid Door&7]&e This paid door cannot be left.'
+  can-not-enter: '&7[&aPaid Door&7]&e This paid door cannot be entered.'
+  leaving: '&7[&aPaid Door&7]&f This is&e %player% &f''s paid door, press&e Shift+Right Click &fto leave.'
+  solid-blocked: '&7[&aPaid Door&7]&e There are blocks blocking the door, cannot pass.'
+  have-entered: '&7[&aPaid Door&7]&f You spent&e %price% coins&f to enter&e %player% &f''s paid door.'
+  information-owner:
+  - ''
+  - '  &b&lPaid Door Information&r'
+  - '  &fCreator: &e%player%'
+  - '  &fPrice: &e%price% coins'
+  - '  &fFlags:'
+  - flags
+  - '  &bShift+Right Click &fclick the sign to edit'
+  - ''
+  have-entered-owner: '&7[&aPaid Door&7]&f You entered&e %player% &f''s paid door.'
+create:
+  need-door: '&7[&bPaid Door&7]&e You need to place the sign above the iron door to create a paid door.'
+  success: '&7[&bPaid Door&7]&a Paid door created successfully!&e Shift+Right Click &aclick the sign to edit the paid door.'
+  need-wall-sign: '&7[&bPaid Door&7]&e You need to place the sign on the wall to create a paid door.'
+  money-not-enough: '&7[&bPaid Door&7]&e You don''t have enough coins to create a paid door! You need&b %money% &ecoins.'
+reach:
+  not-number: '&7[&bPaid Door&7]&e Incorrect distance format.'
+  min-limited: '&7[&bPaid Door&7]&e Exceeded minimum distance limit, minimum %reach% blocks.'
+  max-limited: '&7[&bPaid Door&7]&e Exceeded maximum distance limit, maximum %reach% blocks.'
+price:
+  max-limited: '&7[&bPaid Door&7]&e Exceeded maximum price limit, maximum %money% coins.'
+  min-limited: '&7[&bPaid Door&7]&e Exceeded minimum price limit, minimum %money% coins.'
+  not-number: '&7[&bPaid Door&7]&e Incorrect price format.'
+viewer-title: Container Preview
+no-permission: '&cYou do not have permission to perform this operation.'

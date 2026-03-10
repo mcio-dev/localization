@@ -1,0 +1,112 @@
+# Interface title, supports PAPI
+title: '&0Draft Advanced Settings'
+# Interface layout, 9 icons per row, maximum 6 rows
+inventory:
+  - '黑黑黑黑黑黑黑黑黑'
+  - '黑系收定过　　返黑'
+  - '黑黑黑黑黑黑黑黑黑'
+# Do not warn about missing required item names in the background when reloading
+ignored: []
+# Required items
+items:
+  系:
+    material: NAME_TAG
+    display: '&e&lSender Display Name'
+    lore:
+      - ''
+      - '  &fCustom sender display name,'
+      - '  &fmakes the mail become&e system mail when sent.'
+      - '  &fAfter setting this, the mail will not'
+      - '  &fappear in your outbox.'
+      - ''
+      - '  &fCurrent: &e%sender%'
+      - ''
+      - '&aLeft Click&7 | &fSet sender display name'
+      - '&bRight Click&7 | &fRemove sender display name'
+    prompt-tips: '&7[&e&lMail&7] &bPlease send&e "sender display name"&b value in chat &7(Enter&c cancel &7to cancel)'
+    prompt-cancel: 'cancel'
+    unset: '&7Not set'
+  收:
+    material: CHEST
+    display: '&e&lExtensive Recipient Options'
+    lore:
+      - ''
+      - '  &fMake all players who meet the conditions'
+      - '  &freceive this mail. Current expression:'
+      - '  &e%receivers%'
+      - ''
+      - '&fHover and press number keys to set'
+      - '&a1 &7| &fOnline players on current server'
+      - '&a2 &7| &fOnline players across servers (BungeeCord)'
+      - '&a3 &7| &fPlayers who have been online from a certain time point to now'
+      - '&a4 &7| &fPlayers who have been online within a certain period'
+      - '&a5 &7| &fSpecify players by name list'
+      - '&a6 &7| &fSpecify online players on current server by variable expression'
+      - '&bRight Click &7| &fRemove extensive recipient expression'
+      - '&bDrop (Q) &7| &fTest and view receiver list'
+    prompts:
+      3:
+        tips: '&7[&e&lMail&7] &bPlease send&e "judgment start time"&b for&f "players who have been online from a certain time point to now"&b in chat &7(format &fyear-month-day hour:minute:second&7, defaults to 0 if hour:minute:second is not entered. Enter&c cancel &7to cancel)'
+        cancel: 'cancel'
+      4:
+        tips-start: '&7[&e&lMail&7] &bPlease send&e "judgment start time"&b for&f "players who have been online within a certain period"&b in chat &7(format &fyear-month-day hour:minute:second&7, defaults to 0 if hour:minute:second is not entered. Enter&c cancel &7to cancel)'
+        tips-end: '&7[&e&lMail&7] &bPlease send&e "judgment end time"&b for&f "players who have been online within a certain period"&b in chat &7(format &fyear-month-day hour:minute:second&7, defaults to 0 if hour:minute:second is not entered. Enter&c cancel &7to cancel)'
+        cancel: 'cancel'
+      5:
+        tips: '&7[&e&lMail&7] &bPlease send player list in chat, separated by commas &7(Chinese and English symbols are acceptable, enter&c cancel &7to cancel)'
+        cancel: 'cancel'
+      6:
+        tips: '&7[&e&lMail&7] &bPlease send variable expression in chat, such as&e %player_level% >= 30 &7(Enter&c cancel &7to cancel)'
+        cancel: 'cancel'
+    unset: '&7Not set'
+    bad-time-format: '&7[&e&lMail&7] &fThe time format you entered is incorrect!'
+  定:
+    material: CLOCK
+    display: '&a&lTimed Send'
+    lore:
+      - ''
+      - '  &fAdd this draft to timed sending queue'
+      - '  &fand delete this draft'
+      - '  &cNote: This is not a setting!'
+      - '  &cThe mail is immediately added to the queue after setting the time!'
+      - ''
+      - '&aLeft Click &7| &fSet timed sending'
+      - '&bRight Click &7| &fUse extensive recipient expression'
+      - '&f  last played from (if any)'
+      - '&f  end time to set timed sending'
+    prompt-tips: '&7[&e&lMail&7] &bPlease send&e "timed sending time"&b value in chat and immediately add to timed sending queue &7(format &fyear-month-day hour:minute:second&7, defaults to 0 if hour:minute:second is not entered. Enter&c cancel &7to cancel timed sending)'
+    prompt-cancel: 'cancel'
+    prompt-wrong-format: '&eIncorrect time format'
+    success: '&aMail has been successfully added to the timed sending queue'
+  过:
+    material: COMPASS
+    display: '&e&lAttachment Expiration Time'
+    lore:
+      - ''
+      - '  &fSet how long after the mail is sent'
+      - '  &fthat attachments can no longer be claimed.'
+      - '  &fIf not set, the default value specified by permission will be used'
+      - ''
+      - '  &fCurrent: &e%outdate%'
+      - ''
+      - '&aLeft Click &7| &fSet attachment expiration time'
+      - '&bRight Click &7| &fCancel setting'
+      - '&eShift+Left Click ＆7| &fSet to unlimited'
+    prompt-tips: '&7[&e&lMail&7] &bPlease send&e "attachment expiration time"&b value in chat &7(unit: days. Enter&c cancel &7to cancel)'
+    prompt-cancel: 'cancel'
+    prompt-not-integer: '&ePlease enter an integer'
+    set: '%value% days'
+    unset: '&7Not set'
+    unlimited: '&bUnlimited'
+  返:
+    material: RED_DYE
+    display: '&e&lBack'
+    lore:
+      - ''
+      - '&aLeft Click&7 | &fReturn to draft editor'
+# Optional items
+other-items:
+  黑:
+    material: BLACK_STAINED_GLASS_PANE
+    #custom-model: 10000
+    display: '&0'

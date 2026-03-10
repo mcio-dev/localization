@@ -1,0 +1,25 @@
+# Item material. All other options are optional except this one
+material: DIAMOND
+# Used by older versions before flattening (1.13)
+data: 0
+# Item name
+name: '<blue>Prefab'
+# Item description
+lore:
+  - '<white>Prefab for testing'
+  - '&fMiniMessage format and PAPI variables are supported&7(variables won''t refresh)'
+# Leather armor color
+color: '#EFEFEF'
+# Enchantment list
+enchantments:
+  sharpness: 1
+# Optional, item CustomModelData
+custom_model_data: 10000
+# Whether this item is unstackable. With this option enabled, a UUID will be added to NBT to prevent item stacking
+unique: false
+# Item-specific NBT tags, all support PAPI
+nbt_strings:
+  ITEM_TYPE: 'awa'
+nbt_ints:
+  ITEM_ID: 6
+  ITEM_ID_ALT: '7'

@@ -1,0 +1,116 @@
+title: 'My Items - Page %page%/%max_page%'
+inventory:
+  - '框框框框框框框框框'
+  - '框物物物物物物物框'
+  - '框物物物物物物物框'
+  - '框物物物物物物物框'
+  - '框框框框框框框框框'
+  - '上　类过通　序　下'
+main-icons:
+  物:
+    display: '&e&l%display%'
+    lore:
+      - item lore
+      - ''
+      - '  &fSeller: &e%player%'
+      - '  &fType: &e%type%  '
+      - '  &fStock: &e%amount% &f/&e %amount_original%  '
+      - '  &fPrice: &e%price% %currency%  '
+      - '  &fListed At: &e%create_time%  '
+      - '  &fExpires At: &e%outdate_time%  '
+      - ''
+      - '$if:(%amount% > 0)$ &bRight Click &7| &fTake down item'
+    right-click-commands:
+      - '[take-down]'
+  领:
+    display: '&e&l%display%'
+    lore:
+      - item lore
+      - ''
+      - '  &fSeller: &e%player%'
+      - '  &fType: &e%type%  '
+      - '  &fStock: &e%amount% &f/&e %amount_original%  '
+      - '  &fPrice: &e%price% %currency%  '
+      - '  &fListed At: &e%create_time%  '
+      - '  &fExpires At: &e%outdate_time%  '
+      - ''
+      - '&aLeft Click &7| &fClaim item &7(%amount_can_take% units)'
+      - '$if:(%amount% > 0)$ &bRight Click &7| &fTake down item'
+    left-click-commands:
+      - '[claim]'
+    right-click-commands:
+      - '[take-down]'
+  空:
+    material: AIR
+other-icons:
+  框:
+    material: WHITE_STAINED_GLASS_PANE
+    display: '&f'
+  上:
+    material: ARROW
+    display: '&e&lPrevious Page'
+    left-click-commands:
+      - '[page]-1'
+  下:
+    material: ARROW
+    display: '&e&lNext Page'
+    left-click-commands:
+      - '[page]+1'
+  类:
+    material: DIAMOND
+    display: '&e&lShop Type'
+    lore:
+      - ''
+      - '  &fView %search_type%&f shops  '
+      - ''
+      - '&aLeft Click &7| &fView sell type'
+      - '&bRight Click &7| &fView buy type'
+      - '&eShift+Left Click &7| &fView all types'
+    left-click-commands:
+      - '[search:type]sell'
+    right-click-commands:
+      - '[search:type]buy'
+    shift-left-click-commands:
+      - '[search:type]none'
+  过:
+    material: CLOCK
+    display: '&e&lExpiration Filter'
+    lore:
+      - ''
+      - '  &fExpired: &e%search_outdate%  '
+      - '  &fOut of Stock: &e%search_out_of_stock%  '
+      - ''
+      - '&aLeft Click &7| Toggle expired status'
+      - '&bRight Click &7| Toggle out of stock status'
+    left-click-commands:
+      - '[search:outdate]'
+    right-click-commands:
+      - '[search:out-of-stock]'
+  通:
+    material: SNOWBALL
+    display: '&e&lUnclaimed Items'
+    lore:
+      - ''
+      - '  &fOnly show items that have been ordered but not yet claimed  '
+      - '  &fStatus: &e%search_notice%'
+      - ''
+      - '&aLeft Click &7| &fToggle status'
+      - '&bRight Click &7| &fReturn to global market item list'
+    left-click-commands:
+      - '[search:notice]'
+    right-click-commands:
+      - '[player]sweetplayermarket open'
+  序:
+    material: COMPASS
+    display: '&e&lSort'
+    lore:
+      - ''
+      - '  &fSort By: &e%search_sort_column%  '
+      - '  &fOrder: &e%search_sort_type%  '
+      - ''
+      - '&aLeft Click &7| &fToggle sort column'
+      - '&bRight Click &7| &fToggle sort order'
+    left-click-commands:
+      - '[search:sort]column'
+    right-click-commands:
+      - '[search:sort]type'

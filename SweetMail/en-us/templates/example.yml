@@ -1,0 +1,41 @@
+# Variable configuration
+# You can use variables defined here in mail configuration using ${variable_name}
+# Variables are input through commands, you can also set default values for variables to make them optional
+# When a variable without a default value is not entered in the command, sending mail will prompt an error
+variables:
+  # Variable name, usage ${money}
+  # Command example: /mail send example player money=50
+  money:
+    # Variable type, required, available values:
+    # string - string
+    # number - real number
+    # integer - integer
+    type: number
+    # Default value, optional
+    default: 100
+
+# Mail configuration
+mail:
+  # Sender display name
+  # All mails sent through templates are system mails,
+  # You are not allowed to specify the sender, only change the display name
+  sender: 'System Message'
+  # Mail icon
+  icon: PAPER
+  # Mail title
+  title: 'Example Mail'
+  # Mail content (paged)
+  contents:
+    # The name here can be anything
+    # The plugin does not read numbers, it adds pages in order
+    1:
+      - 'First Page'
+    anything_unique:
+      - 'Second Page'
+  # Mail attachments, basically the same format as draft storage
+  # But in mail templates, you can also use variables
+  attachments:
+    - 'money:${money}'
+  # Mail attachment expiration time, 0 or infinite for permanent
+  # Format: daysdhourshminutesmsecondss, e.g., 1d2h3m4s
+  outdate-time: 7d

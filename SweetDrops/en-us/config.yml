@@ -1,0 +1,6 @@
+# Events folder path, convenient for multi-server synchronization on the same machine
+events-folders:
+  - './events'
+# Prefabs folder path, convenient for multi-server synchronization on the same machine
+prefebs-folders:
+  - './prefebs'

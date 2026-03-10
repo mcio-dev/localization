@@ -1,0 +1,54 @@
+# Redirect configuration folder location
+folder:
+  chat: './chat'
+
+listener:
+  # Event listening priority, the server will execute event listeners in the following order
+  # LOWEST -> LOW -> NORMAL -> HIGH -> HIGHEST
+  # As a chat plugin, it is recommended to use HIGHEST priority
+  priority: HIGHEST
+
+# Chat mode settings
+chat-mode:
+  # Default chat mode when players send chat messages directly
+  # GLOBAL - Global broadcast (shout)
+  # LOCAL - Local chat
+  default-mode: GLOBAL
+  # What prefix to add to quickly switch chat modes
+  switch-mode-prefix:
+    '!': GLOBAL
+  # Whether to cancel the event and disable vanilla chat when no chat format matches
+  # And execute the specified action for sending prompts
+  cancel-event-when-no-format-match:
+    enable: true
+    actions:
+      - '[message]&eChat is not allowed currently'
+  # Global broadcast mode settings
+  global:
+    # Global broadcast requirements, leave empty for no requirements, e.g., '%vault_eco_balance% >= 50'
+    requirement: ''
+    # Commands executed on successful send, e.g., '[console]money take %player_name% 50'
+    success-actions: []
+    # Commands executed when conditions are not met, e.g., '[message]&eYou do not have enough coins to shout'
+    deny-actions: []
+    # What chat format to use
+    formats:
+      - 'default'
+      - 'global/*'
+  # Local chat mode settings
+  local:
+    # How many blocks around can players see the chat
+    radius: 64
+    # What chat format to use
+    formats:
+      - 'local/*'
+
+# Cross-server broadcast settings
+cross-server:
+  # Message broadcast mode
+  # NONE - Do not broadcast messages
+  # BUNGEE_CORD - Broadcast messages through BungeeCord message channel
+  # DATABASE - Broadcast messages through database polling
+  mode: NONE
+  # Cross-server group where the current sub-server is located
+  group: default

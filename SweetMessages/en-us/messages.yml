@@ -1,0 +1,21 @@
+tips:
+  invalid-template: '&eThe template name %s&r &eis invalid'
+  reload-database: '&aReconnected to database'
+  invalid-title: '&ePlease enter title content'
+  bungeecord:
+    not-supported: '&eType %type% does not support BungeeCord broadcast yet'
+    no-players: '&eBungeeCord broadcast requires at least one player online'
+  invalid-selector: '&eThe message recipient %s&r &eis invalid'
+  help:
+  - '&b&lSweetMessages Help&r'
+  - '&f/smsgs message <recipient> [options] <message> &eSend chat message'
+  - '&f/smsgs actionbar <recipient> [options] <message> &eSend ActionBar message'
+  - '&f/smsgs title <recipient> [options] <title
+subtitle> &eSend title message'
+  - '&f/smsgs bossbar <recipient> [options] <text> &eSend BossBar message'
+  - '&7For command options usage, please visit the <u><hover:show_text:Open documentation URL><click:open_url:https://plugins.mcio.dev/docs/messages/commands>plugin documentation</click></hover></u> to check'
+  - '&f/smsgs template <recipient> <template name> &eSend configured template message'
+  - '&f/smsgs reload &eReload configuration files'
+  invalid-bossbar: '&ePlease enter BossBar text content'
+  invalid-content: '&ePlease enter message content'
+  reload: '&aConfiguration files reloaded'

@@ -1,0 +1,149 @@
+# Player names that do not receive emails in advanced settings wildcard matching
+blacklist-players: []
+
+# Whether you can send emails to yourself
+can-send-to-yourself: false
+
+# Whether to use uuid instead of player name to identify players
+# Not recommended for offline mode servers
+# auto - Automatically determine based on the current server mode
+# true - Online mode Use uuid to identify players
+# false - Offline mode Use player name to identify players
+###########################################
+#### WARNING : Do not modify this option after the plugin is officially put into use
+#### Otherwise unpredictable problems will occur.
+###########################################
+online-mode: auto
+
+# Set the time threshold for using the send command to send emails to players who have been online within the longest time from now
+all-offline-players-default-timespan: 90d
+
+# BungeeCord broadcast settings
+bungeecord:
+  # Whether to enable BungeeCord cross-server notification for new emails sending and receiving
+  enable: true
+  # Sender identifier, used to identify the source of the message
+  sender-key: 'default'
+  # Receiver identifier, the message is truly received and relevant players are notified only if the received message's identifier contains this identifier
+  # For example, if the sender identifier is 'server1,server2,'
+  # Sub-server 1's receiver identifier is 'server1,' so it can receive messages
+  # Sub-server 2's receiver identifier is 'server3,' so it cannot receive messages
+  receiver-key: 'default'
+
+# Whether to check plugin compatibility
+check-compatible:
+  cmi: true
+  essentials: true
+
+# Whether to interact with related plugins
+dependencies:
+  # On non-Paper servers (or very old Paper servers), use ProtocolLib to modify interface titles to implement MiniMessage in menu titles
+  ProtocolLib: true
+
+# Maximum number of items displayed in bundle icons
+bundle-max-slots: 7
+
+default:
+  title: 'Unnamed Mail'
+# Preset icons, cannot write custom, cannot start with an English exclamation mark
+preset-icons:
+  # default is the default icon, there must be a default icon
+  default:
+    display: 'Default'
+    item: BUNDLE
+  example:
+    display: 'Example 1'
+    # Use MythicMobs items as icons (draft menu displays mm item names, inbox and outbox only use items, CustomModelData, enchantments, dye data, not names and Lore)
+    item: mythic-example
+  example1:
+    display: 'Example 2'
+    # Use ItemsAdder items as icons, the display strategy is the same as MythicMobs icons
+    item: itemsadder-example
+
+# The amount of gold coins required to send emails for each permission
+# Permission is sweetmail.price.key, such as sweetmail.price.default
+# Lower prices have higher check priority
+# No gold coins are charged if the price cannot be obtained or the price is 0
+# Players have default permission by default
+price:
+  default: 100
+  vip: 80
+  svip: 50
+  mvp: 30
+
+# Valid time of attachments for sending emails with each permission (days)
+# Permission is sweetmail.outdate.key, such as sweetmail.outdate.default
+# Longer time has higher check priority, especially values less than or equal to 0 have higher priority
+# Never expires if valid time cannot be obtained or time is less than 0
+# Players have default permission by default
+outdate-time:
+  default: 7
+  vip: 9
+  svip: 12
+  mvp: 14
+
+# The time that drafts with each permission can be saved (hours)
+# Permission is sweetmail.draft.outdate.key, such as sweetmail.draft.outdate.default
+# Those with permission sweetmail.draft.bypass.outdate can save permanently
+# When the player opens the draft editor, the saveable time will be prompted
+# If the time difference between the next time the player opens the draft editor and the last time it was opened exceeds the value set here, the draft will be reset
+# Each time the draft editor is opened, the saveable time is reset. For example
+# The default value is 24 hours. If the player opens the draft editor at 8:00, it will expire at 8:00 the next day
+# If the player opens the draft editor again at 10:00, it will expire at 10:00 the next day
+# Never expires if valid time cannot be obtained or time is less than or equal to 0
+# Players have default permission by default
+outdate-draft:
+  default: 10
+  vip: 12
+  svip: 24
+  mvp: 24
+
+# Built-in attachment type settings
+attachments:
+  item:
+    # Language configuration used by LangUtils item names
+    locale: en_US
+    material: ITEM_FRAME
+    display: 'Item Attachment'
+    lore: []
+    # Materials, item names, and Lore contents that are not allowed to be added to item attachments
+    # Except for materials, all are "contains" matches
+    # For example, if display_name is set to [ '11', '22' ], items with names containing 11 or 22 are not allowed
+    # For example, if lore is set to [ '33', '44' ], items with Lore containing 33 or 44 are not allowed
+    # Exception: If one of them is *, then all are not allowed
+    # For example, if display_name is set to [ '*' ], all items with custom names are not allowed
+    # For example, if lore is set to [ '*' ], all items with Lore are not allowed
+    # Exception: If one of them is an empty string, names or lore that do not exist are not allowed
+    # For example, if display_name is set to [ '', '11' ], items without names or with names containing 11 are not allowed. Items with names containing 22 are allowed, and empty strings do not participate in subsequent judgments
+    # For example, if lore is set to [ '', '33' ], items without Lore or with Lore containing 11 are not allowed. Items with names containing 22 are allowed, and empty strings do not participate in subsequent judgments
+    blacklist:
+      materials: []
+      display_name: []
+      lore: []
+    claimed-message: '&7[&e&lMail&7]&a You received&e %item% &athrough claiming attachment'
+  money:
+    material: GOLD_NUGGET
+    display: 'Money Attachment'
+    lore: []
+    claimed-message: '&7[&e&lMail&7]&a You received&e %money% &agold coins through claiming attachment'
+  command:
+    material: COMMAND_BLOCK
+    display: 'Console Command Attachment'
+    lore: []
+
+book:
+  # After opening the body preview, if the player moves (including moving the perspective), return to the previous menu
+  # This function is disabled by default because it may feel strange in actual operation
+  return-when-move: false
+  # Whether to allow the default book implementation to open the book and quill preview when left-clicking the draft body icon
+  open-for-draft: true
+  # Whether to allow the default book implementation to open the book and quill preview when left-clicking the mail icon in the inbox or outbox
+  open-for-mail: true
+  # Whether to use the outdated book implementation (this option is valid in 1.15+, and will report an error if enabled in lower versions)
+  # If you find that the book and quill interface cannot be opened, please enable this option
+  # - Disable this option to use the book implementation of adventure-platform-bukkit, which fully supports MiniMessage but may not be available in new versions
+  # - Enable this option to use the book implementation built into the server, which does not fully support MiniMessage (click, hover display, etc. are not supported) but is relatively stable
+  use-legacy-book: false
+
+# In Paper servers, the font used for the offset character of the <offset:> variable in menu titles
+offset-font: 'mrxiaom:sweetmail'

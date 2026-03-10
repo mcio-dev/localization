@@ -1,0 +1,16 @@
+# 数据库配置
+database:
+  # 数据库类型:
+  # sqlite - 使用 SQLite 数据库 (mail.db)，不支持跨服
+  # mysql - 使用 MySQL 数据库
+  type: sqlite
+  host: localhost
+  port: 3306
+  user: root
+  pass: root
+  database: minecraft
+  table_prefix: sweetmail_
+  mysql_version: 8
+
+# 添加额外依赖
+extra-libraries: []

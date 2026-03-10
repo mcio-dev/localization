@@ -1,0 +1,142 @@
+# Interface title, supports PAPI
+title: '&0Draft %title%'
+# Interface layout, 9 icons per row, maximum 6 rows
+inventory:
+  - '黑黑黑黑黑黑黑黑黑'
+  - '黑接图题文高重发黑'
+  - '黑黑黑黑黑黑黑黑黑'
+  - '黑附附附附附附附黑'
+  - '黑黑黑黑黑黑黑黑黑'
+# Do not warn about missing required item names in the background when reloading
+ignored: []
+# Required items
+items:
+  接:
+    material: PLAYER_HEAD
+    display: '&e&lReceiver'
+    lore:
+      - ''
+      - '  &fReceiver of this mail  '
+      - ''
+      - '  &fCurrent: &e%receiver%  '
+      - ''
+      - '&aLeft Click&7 | &fEdit'
+    unset: '&7Not set'
+    prompt-tips: '&7[&e&lMail&7] &bPlease send&e "mail receiver"&b value in chat &7(Enter &f/mail &eplayername&7 to use command completion for player names, you can send directly without deleting /mail to confirm settings. Enter&c cancel &7to cancel)'
+    prompt-cancel: 'cancel'
+    warn-not-exists: '%name% &7(&cNever joined the game&7)'
+    regex: '^[a-zA-Z0-9_\u4e00-\u9fa5]{1,20}'
+  图:
+    display: '&e&lIcon'
+    lore:
+      - ''
+      - '  &fDisplay icon for this mail  '
+      - ''
+      - '  &fCurrent: &e%icon%  '
+      - ''
+      - '&aLeft Click&7 | &fEdit'
+    title: 'Select Icon'
+    title-custom: 'Select Icon (Can select in inventory)'
+  题:
+    material: NAME_TAG
+    display: '&e&lTitle'
+    lore:
+      - ''
+      - '  &fTitle of this mail  '
+      - ''
+      - '  &fCurrent: &e%title%  '
+      - ''
+      - '&aLeft Click&7 | &fEdit'
+    prompt-tips: '&7[&e&lMail&7] &bPlease send&e "mail title"&b value in chat &7(Enter&c cancel &7to cancel)'
+    prompt-cancel: 'cancel'
+  文:
+    material: BOOK
+    display: '&e&lContent'
+    lore:
+      - ''
+      - '  &fContent of this mail  '
+      - ''
+      - '  &fCurrent &e%content_size% &fcharacters  '
+      - ''
+      - '&aLeft Click drag book and quill&7 | &fSet content'
+      - '&bRight Click&7 | &fView'
+  高:
+    material: COMMAND_BLOCK
+    redirect: 黑
+    display: '&e&lAdvanced Settings'
+    lore:
+      - ''
+      - '  &fSettings only editable by administrators  '
+      - ''
+      - '&aLeft Click&7 | &fEnter advanced settings'
+  重:
+    material: LAVA_BUCKET
+    display: '&c&lReset Draft'
+    lore:
+      - ''
+      - '  &fRestore draft to default state,  '
+      - '  &fand take out all attachments  '
+      - ''
+      - '&aLeft Click&7 | &fExecute operation'
+  发:
+    material: ENDER_EYE
+    display: '&a&lSend Mail'
+    lore:
+      - ''
+      - '  &fConfirm sending this mail  '
+      - '  &fand delete this draft  '
+      - '  &fCost: &e%price% gold coins'
+      - ''
+      - '&aLeft Click&7 | &fExecute operation'
+  附:
+    material: MINECART
+    display: '&e&lAttachment Slot'
+    lore:
+      - ''
+      - '  &fThis is an empty attachment slot,  '
+      - '  &fwe can place some attachments here  '
+      - ''
+      - '&aLeft Click&7 | &fAdd attachment'
+      - '&aLeft Click drag item&7 | &fQuick add item attachment'
+# Optional items
+other-items:
+  黑:
+    material: BLACK_STAINED_GLASS_PANE
+    #custom-model: 10000
+    display: '&0'
+  例:
+    # Required, item material, can use vanilla, or
+    # Vanilla item ID#CustomModelData to add CMD
+    # mythic- prefix uses MythicMobs items
+    # itemsadder- prefix uses ItemsAdder items
+    # head-base64- prefix uses base64 texture heads, you can get heads from https://minecraft-heads.com/
+    # craftengine- prefix uses CraftEngine items
+    material: 'STONE#10000'
+    # Add a CustomModelData, will override the value specified in material
+    custom-model: 10001
+    # Optional, add a Unbreaking 1 enchantment and hidden enchantment flag to make the item have enchantment glow
+    glow: true
+    # Optional, item name
+    display: 'Example'
+    # Optional, item Lore
+    lore:
+      - 'This is a complete example, we will be here'
+      - 'Show all features of optional items'
+      - 'Except for click actions, required items can also use these features'
+    # Optional, item click actions, the following are left click, right click, Shift+left click, Shift+right click, mouse hover press Q
+    # Format is [type]parameter. The following types are available, similar to DeluxeMenus but not as rich
+    # [console] Console command
+    # [player] Player command
+    # [actionbar] Action bar message
+    # [message] Chat message
+    # [close] Close interface
+    # [delay]time(ticks) Delay before executing the next statement (if using this, it is recommended to close the interface first to avoid players clicking repeatedly)
+    # All support PAPI
+    left-click-commands: []
+    right-click-commands: []
+    shift-left-click-commands: []
+    shift-right-click-commands: []
+    drop-commands:
+      - '[console]dm open cd_main %player_name%'
+      - '[player]spawn'
+      - '[message]Ciallo～(∠・ω< )⌒★'

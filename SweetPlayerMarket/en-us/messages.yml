@@ -1,0 +1,152 @@
+messages:
+  command:
+    limitation:
+      create-cost: '&fListing to %type%&r&f shop requires a fee'
+      no-item: '&ePlease hold the item you want to check'
+      can-use-type: '&fAvailable shop types: %types%'
+    create:
+      no-amount-valid: '&ePlease enter a valid total item quantity'
+      buy:
+        no-enough-currency: '&eYou do not have enough currency to list the item'
+      limitation:
+        create-cost-failed: '&eYou don''t have enough %currency%, you need to pay %money% %currency% as listing fee'
+        currency-not-allow: '&eUsing %currency% is prohibited when listing this item'
+        type-not-allow: '&eListing to this type of shop is prohibited for this item'
+      no-item: '&ePlease hold the item you want to list'
+      no-item-selected: '&ePlease select the item you want to list'
+      failed: '&eFailed to list item, please contact server administrator'
+      success: '&aYou have successfully listed&e <item>%item%</item>&r&a to the global market!'
+      no-currency-default: '&eDefault currency type not found, please contact server administrator'
+      no-item-count-valid-held: '&ePlease enter a valid item count per unit, the number you entered exceeds the amount you are holding'
+      no-type-found: '&ePlease enter a valid shop type'
+      no-currency-found: '&ePlease enter a valid currency type'
+      no-price-valid: '&ePlease enter a valid price'
+      sell:
+        no-enough-items: '&eYou do not have enough items to list'
+      failed-db: '&eFailed to create new item ID, please try again later'
+      no-currency-permission: '&eYou do not have permission to use this currency for listing'
+      no-item-count-valid: '&ePlease enter a valid item count per unit'
+      no-item-count-valid-stack: '&ePlease enter a valid item count per unit, the number you entered exceeds the stack limit'
+    no-permission: '&cYou do not have permission to execute this command'
+    help:
+      player:
+      - ''
+      - '&d&lSweetPlayerMarket Global Market&r'
+      - '&f/pm open'
+      - '  &7-- &eOpen global market homepage'
+      - '&f/pm me'
+      - '  &7-- &eView your listed items'
+      - '&f/pm tags [player]'
+      - '  &7-- &eOpen category selection menu'
+      - '&f/pm create <shop type> <price> <currency> [items per unit] [total quantity]'
+      - '  &7-- &eList items to global market'
+      - '&f/pm create <shop type> --menu'
+      - '  &7-- &eOpen listing menu'
+      - ''
+      admin:
+      - ''
+      - '&d&lSweetPlayerMarket Global Market&r'
+      - '&f/pm open [player]'
+      - '  &7-- &eOpen global market homepage for yourself or someone'
+      - '&f/pm me [player]'
+      - '  &7-- &eView listed items for yourself or someone'
+      - '&f/pm tags [player]'
+      - '  &7-- &eOpen category selection menu for yourself or someone'
+      - '&f/pm create <shop type> <price> <currency> [items per unit] [total quantity]'
+      - '  &7-- &eList items to global market'
+      - '&f/pm create <shop type> --menu'
+      - '  &7-- &eOpen listing menu'
+      - '&f/pm recalc'
+      - '  &7-- &eRecalculate tags for all items'
+      - '&f/pm server [player]'
+      - '  &7-- &eView items listed by special account "Server", usually auto-listed items'
+      - '&f/pm auto-deploy <config name> <operation>'
+      - '  &7-- &eTest command for auto-listing feature'
+      - '&f/pm reload database'
+      - '  &7-- &eReload and reconnect database'
+      - '&f/pm reload'
+      - '  &7-- &eReload plugin configuration files'
+      - ''
+    recalc:
+      tags:
+        start: '&aStarting item tag recalculation operation, please wait…'
+        success: '&aRecalculation completed, %count% items had their tags changed'
+        failed: '&eAn error occurred during recalculation, please check console logs'
+      index:
+        failed: '&eAn error occurred during index rebuilding, please check console logs'
+        success: '&aIndex rebuilding completed, search indices created for %count% items'
+        start: '&aStarting item index rebuilding operation, please wait…'
+      invalid-type: '&eInvalid operation type'
+    reload:
+      assets: '&aStarted reloading assets, please check console for details'
+      database: '&aReloaded database.yml and reconnected to database'
+      success: '&aConfiguration files reloaded'
+  gui:
+    me:
+      claim:
+        sell:
+          success: '&aYou have successfully claimed&e %money% %currency%'
+        exception: '&eAn error occurred, logs have been printed to console, please contact server administrator'
+        submit-failed: '&eDatabase change submission failed, please contact server administrator'
+        buy:
+          success: '&aYou have successfully claimed&e <item>%item%</item>&r&e x%total_count%'
+        plugin-too-old: '&eThis sub-server''s plugin is too old to claim this type of item'
+      take-down:
+        submit-failed: '&eDatabase change submission failed, please contact server administrator'
+        exception: '&eAn error occurred, logs have been printed to console, please contact server administrator'
+        item-not-found: '&eThis item has already been taken down, no need to take it down again'
+        success-admin: '&aItem has been taken down, remaining items or currency will not be returned to you or the shop owner'
+        success: '&aItem has been taken down, remaining items or currency have been returned to your account'
+    deploy:
+      amount:
+        success: '&aTotal quantity set to &e%count%'
+        prompt-cancel: cancel
+        not-number: '&ePlease enter a valid number'
+        prompt-message: '&7[&e&lMarket&7] &fPlease send&e total quantity&f in chat, send&c %cancel%&f to cancel'
+      price:
+        success: '&aPrice set to &e%money%%currency%'
+        prompt-cancel: cancel
+        not-number: '&ePlease enter a valid price'
+        prompt-message: '&7[&e&lMarket&7] &fPlease send&e price per unit&f in chat, send&c %cancel%&f to cancel'
+      item-count:
+        not-number: '&ePlease enter a valid number'
+        success: '&aItems per unit set to &e%count%'
+        prompt-message: '&7[&e&lMarket&7] &fPlease send&e items per unit&f in chat, send&c %cancel%&f to cancel'
+        prompt-cancel: cancel
+    sell:
+      currency-not-enough: '&eYou do not have enough %currency%'
+      amount-not-enough: '&eItem stock is insufficient, reduce the purchase quantity~'
+      exception: '&eAn error occurred, logs have been printed to console, please contact server administrator'
+      success: '&aYou have successfully purchased&e <item>%item%</item>&r&e x%total_count%&a, spending&e %money% %currency%'
+      submit-failed: '&eDatabase change submission failed, this item may have been taken down'
+      adapter-not-found: '&eThis item cannot be operated on this sub-server'
+    buy:
+      success: '&aYou have successfully sold&e <item>%item%</item>&r&e x%total_count%&a, earning&e %money% %currency%'
+      amount-not-enough: '&eItem storage space is insufficient, reduce the sale quantity~'
+      adapter-not-found: '&eThis item cannot be operated on this sub-server'
+      item-not-enough: '&eYou do not have enough items to sell'
+      exception: '&eAn error occurred, logs have been printed to console, please contact server administrator'
+      submit-failed: '&eDatabase change submission failed, this item may have been taken down'
+    common:
+      currency-not-found: '&eUsing %currency% is not supported on this sub-server'
+      'yes': '&aYes'
+      item-not-found: '&eToo late, this item has been taken down'
+      empty: '&7Empty'
+      none: '&7None'
+      'no': '&cNo'
+    keyword:
+      prompt-cancel: cancel
+      prompt-message: '&7[&e&lMarket&7] &fPlease send&e search keyword&f in chat, send&c %cancel%&f to cancel'
+  tab-complete:
+    create:
+      item-count: '[items per unit]'
+      amount: '[total quantity]'
+      price: <price>
+  player:
+    not-online: '&ePlayer is not online (or does not exist)'
+    only: Only players can execute this command
+  notice:
+    takedown-by-admin:
+      content: '&7[&e&lMarket&r&7]&e Your%type%&e item&b %item%&r&e has been taken down by&b %admin_name%'
+      unknown-admin: Administrator
+  server-owner-name: '#Server#'

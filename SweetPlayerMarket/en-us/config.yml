@@ -1,0 +1,133 @@
+
+# --------------------------------------
+#  Note: Do NOT modify this option after officially using this plugin
+#  Note: Do NOT modify this option after officially using this plugin
+#  Note: Do NOT modify this option after officially using this plugin
+# --------------------------------------
+# Use player UUID or player name as database player identifier
+# true  -- Use UUID
+# false -- Use player name
+# auto  -- Determine based on online-mode in server.properties
+online-mode: auto
+
+# Specify the path where GUI configurations are located,
+# Path starting with ./ is relative to the plugin data directory,
+# Others are relative to the server directory, or absolute path
+gui-folder: './gui'
+
+# Whether to refresh all players' global market interfaces after a player lists an item
+update-gui-after-create-item: true
+
+# Whether players can buy their own listed items
+can-buy-self-items: false
+
+# Universal time format
+datetime:
+  format: 'yyyy-MM-dd HH:mm:ss'
+  infinite: Infinite
+
+# Default parameters
+default:
+  # Default currency used for listing items
+  currency: Vault
+
+# Global market listing expiration time limit groups
+# Players with permission sweet.playermarket.outdate.<group name> will use the corresponding time, e.g., sweet.playermarket.outdate.vip
+# Limit groups with smaller priority values are used first, default group is used when no groups match
+# Time format is number+unit, e.g., 5d for 5 days, available units: M(month), d(day), h(hour), m(minute), s(second)
+# Use 'infinite' for permanent validity
+outdate-time:
+  default:
+    priority: 1000
+    buy: 5d
+    sell: 5d
+  vip:
+    priority: 990
+    buy: 7d
+    sell: 7d
+  svip:
+    priority: 989
+    buy: 9d
+    sell: 9d
+  mvp:
+    priority: 988
+    buy: 10d
+    sell: 10d
+
+# Display names for item data
+display-names:
+  # Market type names
+  market-types:
+    all: '&eAll'
+    buy: '&aBuy'
+    sell: '&bSell'
+
+  # Amount display abbreviations
+  money-format:
+    '1000': 'K'
+    '1000000': 'M'
+
+  # Currency type names
+  currency-types:
+    all: '&aAll'
+    # Vault currency
+    vault: '&eCoins'
+    # PlayerPoints currency
+    points: '&dPoints'
+    # MPoints currency
+    m-points:
+      sign: '&bMPoints'
+  columns:
+    create_time: '&aCreated At'
+    outdate_time: '&bExpires At'
+    price: '&6Price'
+    amount: '&3Amount'
+  sort:
+    asc: '&aAscending &7(from &fsmall&7 to &elarge&7)'
+    desc: '&bDescending &7(from &elarge&7 to &fsmall&7)'
+
+# Actions to execute when events occur
+# For events with player context, PAPI variables are supported
+# For item-related events, the following variables are supported
+# %creator%       - Seller name
+# %item%          - Item display name (MiniMessage)
+# %shop_type%     - Shop type (uses display name from above configuration)
+# %shop_type_raw% - Shop type (raw value)
+# %currency%      - Currency type (uses display name from above configuration)
+# %currency_raw%  - Currency type (raw value)
+# %price%         - Item price (formatted)
+# %price_raw%     - Item price (raw value)
+# %amount%        - Item quantity
+# %tag%           - Item tag
+event-actions:
+  # Actions to execute when listing is successful, with seller as player context
+  create-shop: []
+  # Actions to execute when someone buys from a sell shop, with buyer as player context
+  # Additional supported variables:
+  # %buy_amount%       - Total quantity purchased
+  # %total_item_count% - Total number of items purchased
+  # %total_money%      - Total price
+  sell-shop-confirm: []
+  # Actions to execute when someone sells to a buy shop, with seller as player context
+  # Additional supported variables:
+  # %sell_amount%      - Total quantity sold
+  # %total_item_count% - Total number of items sold
+  # %total_money%      - Total price
+  buy-shop-confirm: []
+
+notice:
+  on-join:
+    text: '&7[&e&lMarket&r&7]&a You have unclaimed items, click here to collect'
+    hover:
+      - '&eClick to open personal item menu'
+    click: '/playermarket me --notice'
+  buy:
+    text: '&7[&e&lMarket&r&7]&a Someone sold &e%item%&r&a to your shop, click here to collect items'
+    hover:
+      - '&eClick to open personal item menu'
+    click: '/playermarket me --notice'
+  sell:
+    text: '&7[&e&lMarket&r&7]&a Someone purchased &e%item%&r&a from your shop, click here to collect %currency%'
+    hover:
+      - '&eClick to open personal item menu'
+    click: '/playermarket me --notice'

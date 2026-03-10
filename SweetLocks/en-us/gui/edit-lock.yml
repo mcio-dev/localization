@@ -1,0 +1,117 @@
+title: 'Edit Paid Door'
+inventory:
+  - '框框框框框框框框框'
+  - '框　价　　距离　框'
+  - '框　进出空钱效　框'
+  - '框框框框框框框框框'
+main-icons:
+  价:
+    material: GOLD_INGOT
+    display: '&e&lPrice'
+    lore:
+      - ''
+      - '&f  How many coins do others need to pay '
+      - '&f  to enter the paid door?  '
+      - '&f  Creator enters the paid door for free'
+      - ''
+      - '&f  Price: &e%price% coins'
+      - ''
+      - '&aLeft Click &7|&f Change price'
+    prompt:
+      tips: '&7[&bPaid Door&7]&f Please send the&e paid door entry price&7 in chat (send&f cancel &7to cancel)'
+      cancel: 'cancel'
+  距:
+    material: ENDER_EYE
+    display: '&e&lEntry Teleport Distance'
+    lore:
+      - ''
+      - '&f  When entering the paid door, teleport '
+      - '&f  how many blocks behind the door  '
+      - ''
+      - '&f  Distance: &e%reach% blocks'
+      - ''
+      - '&aLeft Click &7|&f Change distance'
+    prompt:
+      tips: '&7[&bPaid Door&7]&f Please send the&e paid door entry teleport distance&7 in chat (send&f cancel &7to cancel)'
+      cancel: 'cancel'
+  离:
+    material: ENDER_EYE
+    display: '&e&lExit Teleport Distance'
+    lore:
+      - ''
+      - '&f  When leaving the paid door, teleport '
+      - '&f  how many blocks behind the door  '
+      - ''
+      - '&f  Distance: &e%reach% blocks'
+      - ''
+      - '&aLeft Click &7|&f Change distance'
+    prompt:
+      tips: '&7[&bPaid Door&7]&f Please send the&e paid door exit teleport distance&7 in chat (send&f cancel &7to cancel)'
+      cancel: 'cancel'
+  进:
+    material: IRON_DOOR
+    display: '&e&lAllow Entry'
+    lore:
+      - ''
+      - '&f  Whether to allow entry to the paid door  '
+      - ''
+      - '&f  Status: %flag%'
+      - ''
+      - '&aLeft Click &7|&f Change flag'
+    with: '&aYes'
+    none: '&cNo'
+  出:
+    material: BIRCH_DOOR
+    display: '&e&lAllow Exit'
+    lore:
+      - ''
+      - '&f  Whether to allow exit from the paid door  '
+      - ''
+      - '&f  Status: %flag%'
+      - ''
+      - '&aLeft Click &7|&f Change flag'
+    with: '&aYes'
+    none: '&cNo'
+  空:
+    material: CHEST
+    display: '&e&lEmpty Inventory'
+    lore:
+      - ''
+      - '&f  Whether to require empty inventory to enter  '
+      - ''
+      - '&f  Status: %flag%'
+      - ''
+      - '&aLeft Click &7|&f Change flag'
+    with: '&aYes'
+    none: '&cNo'
+  钱:
+    material: GOLD_NUGGET
+    display: '&e&lNo Coins in Account'
+    lore:
+      - ''
+      - '&f  Whether to require players to have '
+      - '&f  no coins in their account, or just enough to afford '
+      - '&f  the cost of entering the paid door  '
+      - ''
+      - '&f  Status: %flag%'
+      - ''
+      - '&aLeft Click &7|&f Change flag'
+    with: '&aYes'
+    none: '&cNo'
+  效:
+    material: GLASS_BOTTLE
+    display: '&e&lNo Potion Effects'
+    lore:
+      - ''
+      - '&f  Whether to require players to have '
+      - '&f  no potion effects when entering  '
+      - ''
+      - '&f  Status: %flag%'
+      - ''
+      - '&aLeft Click &7|&f Change flag'
+    with: '&aYes'
+    none: '&cNo'
+other-icons:
+  框:
+    material: WHITE_STAINED_GLASS_PANE
+    display: '&f&l '

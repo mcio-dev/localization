@@ -1,0 +1,149 @@
+# Worlds where the plugin is disabled, world names are case-sensitive
+disable-worlds:
+  - disableWorld1
+  - disableWorld2
+
+# Iron door block materials
+door-blocks:
+  - IRON_DOOR
+  - IRON_DOOR_BLOCK
+
+# Extended feature: Container content preview
+view-container:
+  # What content the sign must contain to trigger container preview when clicked
+  # Set this option to an empty string to disable this feature
+  sign: 'View Container'
+  # Which containers can trigger preview
+  # https://javadoc.mcio.dev/spigot/1.21.4/org/bukkit/event/inventory/InventoryType.html
+  # Default includes: Chests, Dispensers, Droppers, Hoppers, Shulker Boxes, Barrels
+  types:
+    - CHEST
+    - DISPENSER
+    - DROPPER
+    - HOPPER
+    - SHULKER_BOX
+    - BARREL
+  # What action clicks the sign can trigger preview
+  # LEFT, RIGHT, SHIFT_LEFT, SHIFT_RIGHT
+  actions:
+    - SHIFT_LEFT
+
+create:
+  # Create a paid door when the first line matches
+  sign-line: '$lock'
+  # How many coins are required to create a paid door
+  create-price: 0
+  # Default price
+  default-price: 0
+  # Default distance to teleport outside the door
+  default-reach-enter: 0
+  default-reach-leave: 0
+
+# Permission group configuration
+# Group name cannot be "default" and cannot contain English dot (.)
+# Players with permission "sweet.locks.group.<group name>" belong to a group
+# Groups with smaller priority are matched first
+groups:
+  # Example group name, corresponding permission is sweet.locks.group.vip
+  vip:
+    # Priority
+    priority: 1000
+    # All following options are optional, if deleted, the default values from the config file will be used
+    create-price: 0
+    money:
+      min: 0.0
+      max: 10000.0
+      tax: '0%'
+    reach-enter:
+      min: 0
+      max: 0
+    reach-leave:
+      min: 0
+      max: 0
+
+# Paid iron door sign content, supports MiniMessage
+lock-sign:
+  - '<dark_aqua>[<aqua><b>Paid Door</b><dark_aqua>]'
+  - '%price% Coins'
+  - '<u>%player%'
+  - '%flags%'
+
+money:
+  # Minimum and maximum price limits, set to "unlimited" for no limit
+  min: 0.0
+  max: 10000.0
+  # Price display format
+  format: '%.1f'
+  # Remove decimal part if price is integer
+  # Comment this option to disable this feature
+  replace-empty: '.0'
+  # What percentage of tax to charge the creator when players enter the paid door
+  tax: '0%'
+
+reach:
+  # Maximum distance to enter/exit paid doors, set to -1 to disable this limit
+  interact: 2.6
+  # Minimum and maximum teleport distance limits
+  enter:
+    min: 0
+    max: 0
+  leave:
+    min: 0
+    max: 0
+
+prevent-solid-target:
+  # Do not teleport if the target location is a solid block
+  enable: true
+  # Blocks with a hitbox height greater than or equal to this value are considered solid
+  # Hitbox interface is available from version 1.13, this option is invalid for lower versions
+  min-height: 0.6
+  # Other blocks that are not considered solid
+  # But can be broken after being pushed by pistons, they are never considered solid (piston push judgment is not complete, some blocks are not judged properly)
+  # If players cannot teleport to the opposite side of the paid door, add blocks here
+  not-solid-materials:
+    - STEP
+    - WOOD_STEP
+    - FENCE_GATE
+    - HOPPER
+    - SLIME
+    - SLIME_BLOCK
+    - WATER
+    - STATIONARY_WATER
+    - LAVA
+    - STATIONARY_LAVA
+    - WOODEN_PLATE
+    - STONE_PLATE
+    - IRON_PLATE
+    - GOLD_PLATE
+
+# Flag display content
+flags:
+  # Display order
+  order:
+    - can-enter
+    - can-leave
+    - no-items
+    - no-money
+    - no-potions
+  # Display content
+  display:
+    can-enter:
+      with: 'I '
+      none: ''
+      info: 'Allow entry'
+    can-leave:
+      with: 'O '
+      none: ''
+      info: 'Allow exit'
+    no-items:
+      with: 'E '
+      none: ''
+      info: 'Require empty inventory to enter'
+    no-money:
+      with: 'NM '
+      none: ''
+      info: 'Require no money to enter (or just enough to pay)'
+    no-potions:
+      with: 'NP '
+      none: ''
+      info: 'Require no potion effects to enter'

@@ -1,0 +1,137 @@
+title: 'Global Market - Page %page%/%max_page%'
+inventory:
+  - '框框框框框框框框框'
+  - '框物物物物物物物框'
+  - '框物物物物物物物框'
+  - '框物物物物物物物框'
+  - '框框框框框框框框框'
+  - '上　类币刷序发　下'
+main-icons:
+  物:
+    display: '&e&l%display%'
+    lore:
+      - item lore
+      - ''
+      - '  &fSeller: &e%player%'
+      - '  &fType: &e%type% x %amount%  '
+      - '  &fPrice: &e%price% %currency%  '
+      - '  &fListed At: &e%create_time%  '
+      - '  &fExpires At: &e%outdate_time%  '
+      - ''
+      - '&aLeft Click &7| &fPlace order and checkout'
+      - '$if:(%is_market_admin%)$ &bRight Click &7| &fAdmin take down item'
+    left-click-commands:
+      - '[confirm]'
+    right-click-commands:
+      - '[take-down-by-admin]'
+  # This icon is only visible when can-buy-self-items is false
+  物_自己:
+    display: '&e&l%display%'
+    lore:
+      - item lore
+      - ''
+      - '  &fSeller: &e%player%'
+      - '  &fType: &e%type% x %amount%  '
+      - '  &fPrice: &e%price% %currency%  '
+      - '  &fListed At: &e%create_time%  '
+      - '  &fExpires At: &e%outdate_time%  '
+      - ''
+      - '$if:(%amount% > 0)$ &aLeft Click &7| &fTake down item'
+    left-click-commands:
+      - '[take-down]'
+  空:
+    material: AIR
+other-icons:
+  框:
+    material: WHITE_STAINED_GLASS_PANE
+    display: '&f'
+  上:
+    material: ARROW
+    display: '&e&lPrevious Page'
+    left-click-commands:
+      - '[page]-1'
+  下:
+    material: ARROW
+    display: '&e&lNext Page'
+    left-click-commands:
+      - '[page]+1'
+  类:
+    material: DIAMOND
+    display: '&e&lCategories'
+    lore:
+      - ''
+      - '  &fItem Category: &e%search_tag%  '
+      - '  &fViewing %search_type%&f shops  '
+      - ''
+      - '&aLeft Click &7| &fSelect item category'
+      - '&bLeft Click &7| &fView all types'
+      - '&eShift+Left Click &7| &fView sell shops'
+      - '&dShift+Right Click &7| &fView buy shops'
+    left-click-commands:
+      - '[search:tag]::list::'
+    right-click-commands:
+      - '[search:type]none'
+    shift-left-click-commands:
+      - '[search:type]sell'
+    shift-right-click-commands:
+      - '[search:type]buy'
+  币:
+    material: GOLD_INGOT
+    display: '&e&lFilter Currency'
+    lore:
+      - ''
+      - '  &fCurrent Currency Filter: &e%search_currency%  '
+      - ''
+      - '&aLeft Click &7| &fToggle currency filter'
+    left-click-commands:
+      - '[search:currency]next'
+      #- '[search:currency]Vault'
+      #- '[search:currency]PlayerPoints'
+      #- '[search:currency]MPoints:sign'
+  刷:
+    material: SNOWBALL
+    display: '&e&lRefresh'
+    lore:
+      - ''
+      - '&aLeft Click &7| &fRefresh shop menu'
+      - '&bRight Click &7| &fView my items'
+      - ''
+      - '  &fKeywords: &e%search_keyword%'
+      - ''
+      - '&eShift+Left Click &7| &fSearch items by keyword'
+      - '&dShift+Right Click &7| &fClear keywords'
+    left-click-commands:
+      - '[refresh]'
+    right-click-commands:
+      - '[player]sweetplayermarket me'
+    shift-left-click-commands:
+      - '[search:keyword]'
+    shift-right-click-commands:
+      - '[search:keyword]reset'
+  序:
+    material: COMPASS
+    display: '&e&lSort'
+    lore:
+      - ''
+      - '  &fSort By: &e%search_sort_column%  '
+      - '  &fOrder: &e%search_sort_type%  '
+      - ''
+      - '&aLeft Click &7| &fToggle sort column'
+      - '&bRight Click &7| &fToggle sort order'
+    left-click-commands:
+      - '[search:sort]column'
+    right-click-commands:
+      - '[search:sort]type'
+  发:
+    material: HOPPER
+    display: '&e&lList Item'
+    lore:
+      - ''
+      - '  &fList items to the global market  '
+      - ''
+      - '&aLeft Click &7| &fI want to sell items'
+      - '&bRight Click &7| &fI want to buy items'
+    left-click-commands:
+      - '[player]playermarket create sell --menu'
+    right-click-commands:
+      - '[player]playermarket create buy --menu'

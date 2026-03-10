@@ -1,0 +1,82 @@
+title: 'Sell Shop - Order Payment'
+inventory:
+  - '框框框框框框框框框'
+  - '框增增　物　减减框'
+  - '框框框确框返框框框'
+main-icons:
+  物:
+    display: '&e&l%display%'
+    lore:
+      - item lore
+      - ''
+      - '  &fSeller: &e%player%'
+      - '  &fType: &e%type% x %amount%  '
+      - '  &fPrice: &e%price% %currency%  '
+      - '  &fListed At: &e%create_time%  '
+      - '  &fExpires At: &e%outdate_time%  '
+      - ''
+  确:
+    material: SLIME_BALL
+    display: '&e&lConfirm'
+    lore:
+      - ''
+      - '  &fPrice: &e%price% %currency%  '
+      - '  &fBuy: &e%count% units&7 (total %total_count% items)  '
+      - '  &fCost: &e%total_money% %currency%  '
+      - ''
+      - '&aLeft Click &7| &fConfirm payment'
+  返:
+    material: MAGMA_CREAM
+    display: '&e&lCancel'
+    lore:
+      - ''
+      - '&aLeft Click &7| &fReturn to global market'
+other-icons:
+  框:
+    material: WHITE_STAINED_GLASS_PANE
+    display: '&f'
+    lore:
+      - '&7Please confirm payment as soon as possible'
+      - '&7Items may be out of stock due to others purchasing'
+  增:
+    material: GLOWSTONE_DUST
+    display: '&aIncrease'
+    lore:
+      - ''
+      - '  &fPrice: &e%price% %currency%  '
+      - '  &fBuy: &e%count% units&7 (total %total_count% items)  '
+      - '  &fCost: &e%total_money% %currency%  '
+      - ''
+      - '&aLeft Click &7| &fIncrease by 1 unit'
+      - '&bRight Click &7| &fIncrease by 5 units'
+      - '&eShift+Left Click &7| &fIncrease by 10 units'
+      - '&dShift+Right Click &7| &fIncrease to %amount% units'
+    left-click-commands:
+      - '[count]+1'
+    right-click-commands:
+      - '[count]+5'
+    shift-left-click-commands:
+      - '[count]+10'
+    shift-right-click-commands:
+      - '[count]+max'
+  减:
+    material: REDSTONE
+    display: '&bDecrease'
+    lore:
+      - ''
+      - '  &fPrice: &e%price% %currency%  '
+      - '  &fBuy: &e%count% units&7 (total %total_count% items)  '
+      - '  &fCost: &e%total_money% %currency%  '
+      - ''
+      - '&aLeft Click &7| &fDecrease by 1 unit'
+      - '&bRight Click &7| &fDecrease by 5 units'
+      - '&eShift+Left Click &7| &fDecrease by 10 units'
+      - '&dShift+Right Click &7| &fDecrease to 1 unit'
+    left-click-commands:
+      - '[count]-1'
+    right-click-commands:
+      - '[count]-5'
+    shift-left-click-commands:
+      - '[count]-10'
+    shift-right-click-commands:
+      - '[count]-max'

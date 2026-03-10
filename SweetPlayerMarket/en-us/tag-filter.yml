@@ -1,0 +1,179 @@
+# Redirect this configuration file to a path, if this is set, the following configurations are invalid
+#goto: '/path/to/tag-filter.yml'
+
+# Display name when no tag filter is applied
+no-tag-display-name: '&7All Items'
+
+# Tag filter list
+# The default filter configuration is made for high versions and may not be suitable for low versions, adjustments are needed
+# After modifying this configuration, you need to execute the command /pm recalc to recalculate all items' tags
+#
+# In the global market menu, use:
+# - '[search:tag]::list:: Open item category menu'
+# - '[search:tag]TagName' to filter and view only items with a certain tag
+# - '[search:tag]' to cancel tag filtering and view all items
+# You can also use the command /pm open --tag=TagName to filter a tag when opening the global market
+tag-filter-map:
+  # Special tag 'default' does not allow configuring filters, only for setting tag display name and other metadata
+  default:
+    # Tag display name
+    display-name: 'Other'
+  # Tag name
+  tools:
+    # Tag display name
+    display-name: 'Tools'
+    # Match by item ID
+    material:
+      - WOODEN_AXE
+      - WOODEN_HOE
+      - WOODEN_PICKAXE
+      - WOODEN_SHOVEL
+      - STONE_AXE
+      - STONE_HOE
+      - STONE_PICKAXE
+      - STONE_SHOVEL
+      - COPPER_AXE
+      - COPPER_HOE
+      - COPPER_PICKAXE
+      - COPPER_SHOVEL
+      - IRON_AXE
+      - IRON_HOE
+      - IRON_PICKAXE
+      - IRON_SHOVEL
+      - GOLDEN_AXE
+      - GOLDEN_HOE
+      - GOLDEN_PICKAXE
+      - GOLDEN_SHOVEL
+      - DIAMOND_AXE
+      - DIAMOND_HOE
+      - DIAMOND_PICKAXE
+      - DIAMOND_SHOVEL
+      - NETHERITE_AXE
+      - NETHERITE_HOE
+      - NETHERITE_PICKAXE
+      - NETHERITE_SHOVEL
+  mythic:
+    # Tag display name
+    display-name: 'Materials'
+    # Priority, smaller numbers are matched first, default priority is 1000
+    priority: 999
+    # Match by item matcher
+    matchers:
+        # When there is any type of specified name NBT, the item matches, this example is MythicMobs items
+      - any-nbt-tag: [ MYTHIC_TYPE ]
+#        # When the NBT value of the specified name for all string types matches, the item matches
+#      - nbt-strings:
+#          MYTHIC_TYPE: ExampleItem
+#        # When the NBT value of the specified name for all integer types matches, the item matches
+#      - nbt-ints:
+#          CustomModelData: 10001
+#        # When any name matches the item ID, the item matches
+#      - any-materials: [ DIAMOND, IRON_INGOT ]
+#        # When any name is included in the item name, the item matches
+#      - contains-name: [ 'Artifact' ]
+#        # When any content is included in any line of the item lore, the item matches
+#      - contains-lore: [ 'Artifact' ]
+  weapon:
+    # Tag display name
+    display-name: 'Weapons'
+    priority: 999
+    # Multiple matching methods can be used simultaneously
+    material:
+      - WOODEN_SPEAR
+      - WOODEN_SWORD
+      - STONE_SPEAR
+      - STONE_SWORD
+      - COPPER_SPEAR
+      - COPPER_SWORD
+      - IRON_SPEAR
+      - IRON_SWORD
+      - GOLDEN_SPEAR
+      - GOLDEN_SWORD
+      - DIAMOND_SPEAR
+      - DIAMOND_SWORD
+      - NETHERITE_SPEAR
+      - NETHERITE_SWORD
+      - TRIDENT
+      - CROSSBOW
+      - BOW
+    # Example, matching some built-in weapon categories of MMOItems
+    matchers:
+      - nbt-strings:
+          MMOITEMS_ITEM_TYPE: AXE
+      - nbt-strings:
+          MMOITEMS_ITEM_TYPE: SWORD
+      - nbt-strings:
+          MMOITEMS_ITEM_TYPE: LONG_SWORD
+      - nbt-strings:
+          MMOITEMS_ITEM_TYPE: DAGGER
+      - nbt-strings:
+          MMOITEMS_ITEM_TYPE: SPEAR
+      - nbt-strings:
+          MMOITEMS_ITEM_TYPE: BOW
+      - nbt-strings:
+          MMOITEMS_ITEM_TYPE: CROSSBOW
+  block:
+    # Tag display name
+    display-name: 'Blocks'
+    # Match by item attributes defined by the server, low versions may not support some attributes
+    # Any match is sufficient
+    material-meta:
+      - is-block
+      #- is-air
+      #- is-burnable
+      #- is-compostable
+      #- is-editable
+      #- is-flammable
+      #- is-fuel
+      #- is-interactable
+      #- is-item
+      #- is-occluding
+      #- is-record
+      #- is-solid
+      #- is-transparent
+  food:
+    # Tag display name
+    display-name: 'Food'
+    material:
+      - APPLE
+      - GOLDEN_APPLE
+      - ENCHANTED_GOLDEN_APPLE
+      - MELON_SLICE
+      - SWEET_BERRIES
+      - GLOW_BERRIES
+      - CHORUS_FRUIT
+      - CARROT
+      - GOLDEN_CARROT
+      - POTATO
+      - BAKED_POTATO
+      - POISONOUS_POTATO
+      - BEETROOT
+      - DRIED_KELP
+      - BEEF
+      - COOKED_BEEF
+      - PORKCHOP
+      - COOKED_PORKCHOP
+      - MUTTON
+      - COOKED_MUTTON
+      - CHICKEN
+      - COOKED_CHICKEN
+      - RABBIT
+      - COOKED_RABBIT
+      - COD
+      - COOKED_COD
+      - SALMON
+      - COOKED_SALMON
+      - TROPICAL_FISH
+      - PUFFERFISH
+      - BREAD
+      - COOKIE
+      - CAKE
+      - PUMPKIN_PIE
+      - ROTTEN_FLESH
+      - SPIDER_EYE
+      - MUSHROOM_STEW
+      - BEETROOT_SOUP
+      - RABBIT_STEW
+      - SUSPICIOUS_STEW
+      - MILK_BUCKET
+      - HONEY_BOTTLE

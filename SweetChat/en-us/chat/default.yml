@@ -1,0 +1,32 @@
+# What permission is required to use this chat format, set to none for no permission
+permission: none
+# Matching priority for this chat format, smaller values match first
+priority: 1000
+
+# Chat format for the current sub-server
+# For all available chat formats, see the documentation
+# https://plugins.mcio.dev/docs/chat/format-parts
+chat-format:
+  - type: plain
+    content: '[Chat] <'
+
+  - type: plain
+    content: '&e%player_name%'
+    hover-text:
+      - '&fPlayer Name: &e%player_name%'
+      - '&fWorld: &e%player_world%'
+      - '&fCoordinates: &e%player_x%&7, &e%player_y%&7, &e%player_z%'
+      - '&fExperience Level: &e%player_level%'
+      - ''
+      - '&bClick to message player'
+    click:
+      action: SUGGEST_COMMAND
+      value: '/msg %player_name% '
+
+  - type: plain
+    content: '> '
+
+  - type: player message
+
+# Chat format displayed on other sub-servers, if not set, uses the same format as chat-format
+# cross-server-format: {}

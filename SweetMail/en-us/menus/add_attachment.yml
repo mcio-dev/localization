@@ -1,0 +1,25 @@
+# Interface title, supports PAPI
+title: '&0Add Attachment  Select Attachment Type'
+# Interface layout, 9 icons per row, maximum 6 rows
+inventory:
+  - '黑黑黑黑黑黑黑黑黑'
+  - '黑附附附附附附附黑'
+  - '黑附附附附附附附黑'
+  - '黑　　　　　　返黑'
+  - '黑黑黑黑黑黑黑黑黑'
+# Do not warn about missing required item names in the background when reloading
+ignored: []
+# Required items
+items:
+  返:
+    material: RED_DYE
+    display: '&e&lBack'
+    lore:
+      - ''
+      - '&aLeft Click&7 | &fReturn to draft'
+# Optional items
+other-items:
+  黑:
+    material: BLACK_STAINED_GLASS_PANE
+    #custom-model: 10000
+    display: '&0'

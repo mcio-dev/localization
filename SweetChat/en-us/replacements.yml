@@ -1,0 +1,78 @@
+
+# Message replacement configuration
+message-replacements:
+  # Item display
+  item-display:
+    # Display format
+    format: '&7[&e%item%&7]'
+    # Each slot is replaced only once, repeated input of the same slot will not replace subsequent inputs
+    one-slot-only-replace-once: true
+    # What the player inputs to get the item from which slot
+    input:
+      '%i': HAND
+      '%o': OFF_HAND
+      '%1': HOTBAR_1
+      '%2': HOTBAR_2
+      '%3': HOTBAR_3
+      '%4': HOTBAR_4
+      '%5': HOTBAR_5
+      '%6': HOTBAR_6
+      '%7': HOTBAR_7
+      '%8': HOTBAR_8
+      '%9': HOTBAR_9
+  # Replacement placeholders
+  placeholders:
+    # Each variable is replaced only once
+    one-key-only-replace-once: false
+    # What the player inputs to replace with corresponding text, with PAPI and full MiniMessage support
+    input:
+      '%pos': '&7[&e%player_x%&7, &e%player_y%&7, &e%player_z%&7]'
+    # When what regular expression matches, replace with corresponding Component, with PAPI and full MiniMessage support
+    # Use $0 to represent the complete matched string, $1, $2, etc. to represent matched groups
+    regex:
+      - regex: 'https?://[A-Za-z0-9._/\%&*!#@~():;?=-]+'
+        content: '&b[&e&lLink&r&b]'
+        hover-text:
+          - '&eOpen link: &b&n$0'
+        click:
+          action: OPEN_URL
+          value: '$0'
+      - regex: '/?res tp ([A-Za-z0-9\u4e00-\u9fa5\_.]+)'
+        content: '&b[&e&lResidence:$1&r&b]'
+        hover-text:
+          - '&fClick to teleport to residence: &e$1'
+        click:
+          action: RUN_COMMAND
+          value: '/res tp $1'
+  # At mention feature
+  at:
+    # Whether to enable this feature
+    enable: true
+    # Regular expression matching format
+    # If Chinese name support is needed, please refer to the residence example above
+    regex: '@?([A-Za-z0-9_]+)'
+    # Extract player name
+    player-name:
+      match: '$1'
+      min-length: 1
+      max-length: 24
+    # Online player source, when a source is invalid, use SERVER instead
+    # SERVER - Online players on the current sub-server
+    # BUNGEE_CORD - Obtained periodically through BC message channel
+    # TAB - Obtained through TAB plugin
+    player-source: TAB
+    # Display format in messages
+    # Only supports the variable %at_target% representing the mentioned player name
+    format:
+      content: '<aqua><b>@%at_target%'
+      hover-text:
+        - '&fMentioned &e%at_target% in chat'
+      click:
+        action: SUGGEST_COMMAND
+        value: '/msg %at_target% '
+    # Actions to execute when the target player sees the mention
+    # The plugin will add sender, mentioned player, etc. to the insertion for easy passing
+    # If the chat message is cross-server, only the actions configured in the target sub-server will be executed
+    target-actions:
+      - '[actionbar]&e&l%sender% &b&lmentioned you in chat'
+      - '[sound]entity.cat.ambient, 1.0, 1.0'

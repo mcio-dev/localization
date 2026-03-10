@@ -1,0 +1,53 @@
+
+# Online mode
+# true - Use UUID to identify players
+# false - Use player name to identify players
+# auto - Determine true or false based on whether the server currently has online mode enabled
+# This value should not be changed after the plugin is officially put into use
+online-mode: auto
+
+# Daily flight time reset time
+reset-time: '4:00'
+
+# World-related settings
+worlds:
+  # World processing mode
+  # "Specified worlds" here refer to:
+  # - If whitelist is not empty, "specified worlds" are whitelist worlds excluding blacklist worlds
+  # - If whitelist is empty, "specified worlds" are all worlds excluding blacklist worlds
+  # The following processing modes can be used:
+  # HANDLE_ALL - Only "specified worlds" allow flight, other worlds prohibit flight
+  # NOT_HANDLE - Only "specified worlds" can use this plugin for flight. When entering other worlds from "specified worlds" or entering the server with position in other worlds, the player's flight will be disabled
+  mode: HANDLE_ALL
+  # Whitelisted worlds, case-insensitive
+  whitelist: []
+  # Blacklisted worlds, case-insensitive
+  blacklist: []
+
+time-format:
+  hour: '%dh'
+  hours: '%dh'
+  minute: '%dm'
+  minutes: '%dm'
+  second: '%ds'
+  seconds: '%ds'
+  infinite: 'Infinite'
+
+# Flight time consumption order
+# Default is to consume extra time first, then consume standard time if extra time is insufficient
+time-consume-order:
+  - extra
+  - standard
+
+boss-bar:
+  # Remaining time display method
+  # NONE - No display
+  # ACTION_BAR - Display above the inventory bar (may conflict with other plugins that send similar messages)
+  # BOSS_BAR - Display in Boss bar (best compatibility in 1.9+, will automatically downgrade to ACTION_BAR in 1.8)
+  display-mode: BOSS_BAR
+  # Remaining flight time display content, supports PAPI variables
+  flying: '&fRemaining flight time: &e%format%'
+  # Bar color, https://javadoc.mcio.dev/spigot/1.21.4/org/bukkit/boss/BarColor.html
+  color: BLUE
+  # Bar style, https://javadoc.mcio.dev/spigot/1.21.4/org/bukkit/boss/BarStyle.html
+  style: SEGMENTED_10

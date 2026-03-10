@@ -1,0 +1,102 @@
+# Redirect this configuration file to a path, if this is set, the following configurations are invalid
+#goto: '/path/to/limitation.yml'
+
+# Default limitations
+# When testing with administrator permissions, please note that some limitations will be ineffective when you have [corresponding bypass permissions], see Commands and Permissions documentation
+# https://plugins.mcio.dev/docs/playermarket/commands
+default:
+  # Item creation fee, leave this empty (create-cost: {}) to not charge a fee
+  create-cost:
+    # Item type, ALL for any type, you can copy and add BUY and SELL below
+    ALL:
+      # Currency type used to collect the fee, use INHERIT to use the same currency as the player's listing currency
+      currency: Vault
+      # Amount of currency to collect, can use fixed numbers or percentages
+      # For example, enter 5% to charge 5% of the total listing price as a fee
+      money: 10
+  # Description of the limitation group displayed in the listing menu
+  description:
+    - '  &7● &fListing requires a fee of %money% %currency%'
+#  # Items matching the limitation are prohibited from listing to specified shop types
+#  shop-type-blacklist: [ BUY, SELL ]
+#  # Items matching the limitation are only allowed to list to specified shop types
+#  shop-type-whitelist: [ BUY, SELL ]
+#  # Items matching the limitation are prohibited from listing with a certain currency, where MPoints without a colon prohibits all
+#  currency-blacklist: [ PlayerPoints, MPoints ]
+#  # Items matching the limitation are only allowed to list with specified currencies, where MPoints without a colon allows all
+#  currency-whitelist: [ Vault, 'MPoints:sign' ]
+
+# Limitations by currency type
+# The configuration placed earlier is matched first
+by-currency:
+    # Currency matcher, same rules as currency-whitelist
+  - currency: [ PlayerPoints ]
+    # Item creation fee, leave this empty (create-cost: {}) to not charge a fee
+    create-cost:
+      # Item type, ALL for any type, you can copy and add BUY and SELL below
+      ALL:
+        # Currency type used to collect the fee, use INHERIT to use the same currency as the player's listing currency
+        currency: PlayerPoints
+        # Amount of currency to collect, can use fixed numbers or percentages
+        # For example, enter 5% to charge 5% of the total listing price as a fee
+        money: '5%'
+    # Description of the limitation group displayed in the listing menu
+    description:
+      - '  &7● &fListing requires a fee of %money% %currency%'
+#    # Items matching the limitation are prohibited from listing to specified shop types
+#    shop-type-blacklist: [ BUY, SELL ]
+#    # Items matching the limitation are only allowed to list to specified shop types
+#    shop-type-whitelist: [ BUY, SELL ]
+#    # Items matching the limitation are prohibited from listing with a certain currency, where MPoints without a colon prohibits all
+#    currency-blacklist: [ PlayerPoints, MPoints ]
+#    # Items matching the limitation are only allowed to list with specified currencies, where MPoints without a colon allows all
+#    currency-whitelist: [ Vault, 'MPoints:sign' ]
+
+# Limitations by item
+# The configuration placed earlier is matched first
+# If an item matches the configuration here, it will override the by-currency configuration, and the by-currency configuration will be invalidated
+by-items:
+    # Item matcher type
+    # ANY means any matcher that meets the conditions can be matched
+    # ALL means all matchers must meet the conditions to be matched
+    # ONLY <quantity> means only a specified number of matchers need to meet the conditions to be matched
+  - matcher-type: ANY
+    # Item matchers
+    matchers:
+        # When there is any type of specified name NBT, the item matches, this example is MythicMobs items
+      - any-nbt-tag: [ MYTHIC_TYPE ]
+#        # When the NBT value of the specified name for all string types matches, the item matches
+#      - nbt-strings:
+#          MYTHIC_TYPE: ExampleItem
+#        # When the NBT value of the specified name for all integer types matches, the item matches
+#      - nbt-ints:
+#          CustomModelData: 10001
+#        # When any name matches the item ID, the item matches
+#      - any-materials: [ DIAMOND, IRON_INGOT ]
+#        # When any name is included in the item name, the item matches
+#      - contains-name: [ 'Artifact' ]
+#        # When any content is included in any line of the item lore, the item matches
+#      - contains-lore: [ 'Artifact' ]
+    # Set create-cost to empty to waive the fee
+    create-cost: {}
+    # Description of the limitation group displayed in the listing menu
+    description:
+      - '  &7● &fMythicMobs items have no listing fee'
+#    # Items matching the limitation are prohibited from listing to specified shop types
+#    shop-type-blacklist: [ BUY, SELL ]
+#    # Items matching the limitation are only allowed to list to specified shop types
+#    shop-type-whitelist: [ BUY, SELL ]
+#    # Items matching the limitation are prohibited from listing with a certain currency, where MPoints without a colon prohibits all
+#    currency-blacklist: [ PlayerPoints, MPoints ]
+#    # Items matching the limitation are only allowed to list with specified currencies, where MPoints without a colon allows all
+#    currency-whitelist: [ Vault, 'MPoints:sign' ]
+
+  - matcher-type: ANY
+    matchers:
+        # Prohibit listing SweetCheckout QR code maps
+      - any-nbt-tag: [ SWEET_CHECKOUT_MAP ]
+        # Prohibit listing MinePay QR code maps
+      - contains-name: [ 'Please check the payment amount' ]
+    description:
+      - '  &7● &fThis item is prohibited from listing'
+    shop-type-blacklist: [ BUY, SELL ]
