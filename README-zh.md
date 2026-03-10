@@ -18,6 +18,12 @@ MrXiaoM 插件的本地化配置文件
 
 举个例子，我是说英语的，我需要 [SweetMail](https://github.com/MrXiaoM/SweetMail) 的语言文件，所以我需要查看 `SweetMail/en-us/` 里面的文件。
 
+> [!WARNING]
+> 
+> 不要只是替换文件。因为它们可能不是最新配置文件，如果不检查提交日期就替换，可能会丢失一些东西。
+> 
+> `messages.yml` 除外，你可以随意替换消息文件，因为它们会自动更新默认消息。
+
 ## 贡献
 
 欢迎提交 PR。

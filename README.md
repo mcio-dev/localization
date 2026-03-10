@@ -18,6 +18,12 @@ Clone the repository, and find the plugin and language you want via folder struc
 
 For example, I am a English speaker. And I want language files of [SweetMail](https://github.com/MrXiaoM/SweetMail). So I need to check files in `SweetMail/en-us/`.
 
+> [!WARNING]
+> 
+> Do NOT just replace files. Because they may not the latest configuration files. You may miss something if you just replace without checking submit date.
+> 
+> Excluding `messages.yml`, you can replace message files freely because they will update fallback message automatically.
+
 ## Contributing
 
 PRs welcome.
