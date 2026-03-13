@@ -1,0 +1,42 @@
+# Task type
+# DAILY, WEEKLY, MONTHLY
+type: DAILY
+# Permission required to receive this task
+# If a player has already received this task, changing this permission will not prevent them from completing it
+# Set to none to allow any player to receive this task
+permission: none
+# Task rarity value (weight)
+# Higher values increase the probability of receiving this task in daily/weekly/monthly rotations
+# Probability = current task weight / sum of all available task weights
+rarity: 50
+# Task icons: normal and completed. Available formats:
+# Vanilla icons: Item ID, e.g., DIAMOND
+# MythicMobs icons: mythic-item, e.g., mythic-ExampleItem
+# ItemsAdder icons: ia-item, e.g., ia-_iainternal:icon_arrow_chest
+# Defaults to PAPER if icon is not found
+icon:
+  normal: DIAMOND_ORE
+  done: BOOK
+# Task name
+name: 'Example Task'
+# Task description
+description: []
+# Sub-task list. See plugin documentation for writing rules:
+# https://plugins.mcio.dev/docs/task/sub_tasks
+# After determining sub-tasks, try not to add or remove tasks
+# If you need to do this, execute /sweettask reset <taskID> after modification to reset all players' sub-task counts
+sub-tasks:
+  - break DIAMOND_ORE or DEEPSLATE_DIAMOND_ORE 64; &fMine diamond ore &e%current%&7/&e%max%
+# Task completion rewards
+# [console]Execute as console
+# [player]Execute as player
+# [message]Chat message
+# All support PAPI variables
+rewards:
+  - '[console]money give %player_name% 100'
+# Reward display lore
+rewards-lore:
+  - '  &e100 Coins'
+# Add this option to override the default completion notification in config.yml
+# Set to empty string to disable notification
+#override-done-tips: '<green>You have completed task<yellow> %name%<green>! <click:run_command:/sweettask open default><gray>[<white><u>Click to view</u><gray>]</click>'

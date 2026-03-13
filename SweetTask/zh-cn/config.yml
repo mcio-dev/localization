@@ -1,0 +1,56 @@
+# 开启调试模式
+# 该选项在开发版本中不允许关闭
+debug: false
+
+# tasks 文件夹路径
+# 用于多服同步
+tasks-folder:
+  - './tasks'
+
+# menus 文件夹路径
+# 用于多服同步
+menus-folder:
+  - './menus'
+
+# 任务到期具体时间
+reset-time: '4:00:00'
+
+# 周期任务权限对应数量
+# 格式为 sweettask.count.<类型>.<键>，如 sweettask.count.daily.default
+# 越大的数量越优先
+counts:
+  # 每日任务数量
+  daily:
+    default: 5
+  # 每周任务数量
+  weekly:
+    default: 0
+  # 每月任务数量
+  monthly:
+    default: 0
+
+# 周期任务权限对应可刷新次数
+# 格式为 sweettask.refresh-count.<类型>.<键>，如 sweettask.refresh-count.daily.default
+# 越大的数量越优先
+refresh-counts:
+  # 每日任务刷新次数
+  daily:
+    default: 5
+  # 每周任务刷新次数
+  weekly:
+    default: 5
+  # 每月任务刷新次数
+  monthly:
+    default: 5
+
+# 不同类型的任务完成提示
+# 支持 MiniMessage，以及 PAPI 变量
+done-tips:
+  daily: '<green>你已完成任务<yellow> %name%<green>! <click:run_command:/sweettask open default><gray>[<white><u>点此查看</u><gray>]</click>'
+  weekly: '<green>你已完成任务<yellow> %name%<green>! <click:run_command:/sweettask open default-weekly><gray>[<white><u>点此查看</u><gray>]</click>'
+  monthly: '<green>你已完成任务<yellow> %name%<green>! <click:run_command:/sweettask open default-monthly><gray>[<white><u>点此查看</u><gray>]</click>'
+
+# 是否启用逆向监听器，若启用
+# - 放置方块任务，在破坏方块时，会减少进度
+# - 破坏方块任务，在放置方块时，会减少进度
+enable-reverse-listener: true

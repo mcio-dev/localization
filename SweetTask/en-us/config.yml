@@ -1,0 +1,56 @@
+# Enable debug mode
+# This option cannot be disabled in development versions
+debug: false
+
+# Tasks folder path
+# For multi-server synchronization
+tasks-folder:
+  - './tasks'
+
+# Menus folder path
+# For multi-server synchronization
+menus-folder:
+  - './menus'
+
+# Task reset time
+reset-time: '4:00:00'
+
+# Periodic task count by permission
+# Format: sweettask.count.<type>.<key>, e.g., sweettask.count.daily.default
+# Higher numbers have higher priority
+counts:
+  # Daily task count
+  daily:
+    default: 5
+  # Weekly task count
+  weekly:
+    default: 0
+  # Monthly task count
+  monthly:
+    default: 0
+
+# Periodic task refresh count by permission
+# Format: sweettask.refresh-count.<type>.<key>, e.g., sweettask.refresh-count.daily.default
+# Higher numbers have higher priority
+refresh-counts:
+  # Daily task refresh count
+  daily:
+    default: 5
+  # Weekly task refresh count
+  weekly:
+    default: 5
+  # Monthly task refresh count
+  monthly:
+    default: 5
+
+# Task completion notifications by type
+# Supports MiniMessage and PAPI variables
+done-tips:
+  daily: '<green>You have completed task<yellow> %name%<green>! <click:run_command:/sweettask open default><gray>[<white><u>Click to view</u><gray>]</click>'
+  weekly: '<green>You have completed task<yellow> %name%<green>! <click:run_command:/sweettask open default-weekly><gray>[<white><u>Click to view</u><gray>]</click>'
+  monthly: '<green>You have completed task<yellow> %name%<green>! <click:run_command:/sweettask open default-monthly><gray>[<white><u>Click to view</u><gray>]</click>'
+
+# Enable reverse listener. If enabled:
+# - For place block tasks, breaking blocks will decrease progress
+# - For break block tasks, placing blocks will decrease progress
+enable-reverse-listener: true

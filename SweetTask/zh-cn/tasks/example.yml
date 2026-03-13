@@ -1,0 +1,42 @@
+# 任务类型
+# DAILY 每日，WEEKLY 每周，MONTHLY 每月
+type: DAILY
+# 抽到这个任务所需的权限
+# 如果玩家已经抽到过这个任务了，调整这个权限不会使得玩家无法完成任务
+# 设为 none 代表无需任何权限即可抽到该任务
+permission: none
+# 任务的稀有度数值（权重）
+# 数值越高，每日、每周、每月任务能抽到该任务的概率越高
+# 抽到该任务的概率为：当前任务权重 / 可用任务权重总和
+rarity: 50
+# 任务图标，普通图标 和 已完成图标。可用格式如下
+# 原版图标：物品ID 如 DIAMOND
+# MythicMobs图标：mythic-物品 如 mythic-ExampleItem
+# ItemsAdder图标：ia-物品 如 ia-_iainternal:icon_arrow_chest
+# 找不到图标时默认使用PAPER
+icon:
+  normal: DIAMOND_ORE
+  done: BOOK
+# 任务名
+name: '示例任务'
+# 任务描述
+description: []
+# 子任务列表，编写规则详见插件文档
+# https://plugins.mcio.dev/docs/task/sub_tasks
+# 在子任务确定之后，尽量不要添加或删除任务
+# 如果要这么做，请在修改后执行 /sweettask reset <任务ID> 重置所有玩家的子任务计数
+sub-tasks:
+  - break DIAMOND_ORE or DEEPSLATE_DIAMOND_ORE 64; &f挖掘钻石矿石 &e%current%&7/&e%max%
+# 任务完成奖励
+# [console]控制台执行
+# [player]玩家执行
+# [message]聊天提示
+# 均支持 PAPI 变量
+rewards:
+  - '[console]money give %player_name% 100'
+# 奖励显示Lore
+rewards-lore:
+  - '  &e100 金币'
+# 添加该选项，即可覆盖 config.yml 中的默认完成提示
+# 设为空字符串则关闭提示
+#override-done-tips: '<green>你已完成任务<yellow> %name%<green>! <click:run_command:/sweettask open default><gray>[<white><u>点此查看</u><gray>]</click>'

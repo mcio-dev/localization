@@ -1,0 +1,116 @@
+title: 'Daily Tasks'
+inventory:
+  - '说框　　　　　　　'
+  - '　框　一二三　　　'
+  - '　框　四五　　刷　'
+  - '　框　　　　　　　'
+permission: 'sweet.task.open.%id%'
+operations:
+  refresh:
+    available:
+      - '  &fRemaining attempts: &e%times%'
+      - ''
+      - '&aLeft click&7 | &fRefresh today''s tasks'
+    task-done:
+      - '&c&mLeft click&r&7 | &fAlready completed tasks'
+    max-times:
+      - '  &fRemaining attempts: &e0'
+      - ''
+      - '&c&mLeft click&r&7 | &fNo more refresh attempts'
+  task:
+    available:
+      - '&aLeft click&7 | &fSubmit task'
+    done:
+      - '&a&lCompleted'
+format:
+  subtasks:
+    - '  &7● &f%action%'
+task-icons:
+  一:
+    # Slot type, format: task type/which task
+    # Task types: DAILY, WEEKLY, MONTHLY
+    type: DAILY/1
+    # When there's no task, use which icon from other-icons as replacement
+    redirect: ''
+    display: '&e&l%name%'
+    lore:
+      - ''
+      - description
+      - sub_tasks
+      - ''
+      - '  &fTask rewards:'
+      - rewards
+      - ''
+      - operation
+  二:
+    type: DAILY/2
+    display: '&e&l%name%'
+    lore:
+      - ''
+      - description
+      - sub_tasks
+      - ''
+      - '  &fTask rewards:'
+      - rewards
+      - ''
+      - operation
+  三:
+    type: DAILY/3
+    display: '&e&l%name%'
+    lore:
+      - ''
+      - description
+      - sub_tasks
+      - ''
+      - '  &fTask rewards:'
+      - rewards
+      - ''
+      - operation
+  四:
+    type: DAILY/4
+    display: '&e&l%name%'
+    lore:
+      - ''
+      - description
+      - sub_tasks
+      - ''
+      - '  &fTask rewards:'
+      - rewards
+      - ''
+      - operation
+  五:
+    type: DAILY/5
+    display: '&e&l%name%'
+    lore:
+      - ''
+      - description
+      - sub_tasks
+      - ''
+      - '  &fTask rewards:'
+      - rewards
+      - ''
+      - operation
+other-icons:
+  框:
+    material: WHITE_STAINED_GLASS_PANE
+    display: '&f&l*'
+  说:
+    material: ITEM_FRAME
+    display: '&a&lDaily Tasks'
+    lore:
+      - ''
+      - '  &fHere you can view and  '
+      - '  &fsubmit tasks.'
+      - '  &fTasks refresh daily at &e4:00'
+      - ''
+  刷:
+    material: HOPPER
+    display: '&e&lRefresh Tasks'
+    lore:
+      - ''
+      - '  &fBefore completing tasks, you can  '
+      - '  &frefresh today''s task list'
+      - ''
+      - refresh_operation:DAILY
+    left-click-commands:
+      - '[open]refresh-daily'

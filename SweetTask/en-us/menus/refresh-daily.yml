@@ -1,0 +1,47 @@
+title: 'Refresh Daily Tasks'
+inventory:
+  - '框框框框框框框框框'
+  - '框　金　　　点　框'
+  - '框框框框回框框框框'
+refresh-type: DAILY
+refresh-tips: '&aDaily tasks refreshed successfully'
+refresh-icons:
+  金:
+    cost:
+      type: VAULT
+      money: 100
+    material: GOLD_INGOT
+    display: '&e&lRefresh'
+    lore:
+      - ''
+      - '  &fYou can refresh the task list before completing any tasks  '
+      - '  &fRemaining attempts: %count%'
+      - '  &fPrice: &e%money% coins'
+      - ''
+      - '&aLeft click &7| &fConfirm refresh'
+    tips:
+      no-money: '&eYou don''t have enough coins to refresh tasks'
+  点:
+    cost:
+      type: PLAYER_POINTS
+      money: 10
+    material: DIAMOND
+    display: '&e&lRefresh'
+    lore:
+      - ''
+      - '  &fYou can refresh the task list before completing any tasks  '
+      - '  &fRemaining attempts: %count%'
+      - '  &fPrice: &e%money% points'
+      - ''
+      - '&aLeft click &7| &fConfirm refresh'
+    tips:
+      no-money: '&eYou don''t have enough points to refresh tasks'
+other-icons:
+  框:
+    material: WHITE_STAINED_GLASS_PANE
+    display: '&f&l*'
+  回:
+    material: HOPPER
+    display: '&e&lBack'
+    left-click-commands:
+      - '[back]'
