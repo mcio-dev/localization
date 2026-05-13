@@ -1,0 +1,35 @@
+
+# Conditional placeholders
+# PAPI usage outside the plugin: %sweetchat_condition_<name>%
+# Placeholder usage inside the plugin: ${cond:<name>}
+conditional-placeholders:
+  # Example 1: when input matches the value of match, output the corresponding output
+  example_when_match:
+    enable: false
+    input: '%player_world%'
+    # Return the corresponding output value when the input matches
+    when:
+      - match: 'world'
+        output: 'Overworld'
+      - match: 'world_nether'
+        output: 'Nether'
+      - match: 'world_the_end'
+        output: 'The End'
+    # Return this value if none of the conditions match
+    else: '${self}'
+  # Example 2: decide the output result based on whether the eval expression is true
+  example_eval:
+    enable: false
+    # Temporary variable list. Parse PAPI variables in advance and store them in ${var.<name>}
+    # to avoid resolving the same PAPI variables repeatedly in multiple expressions
+    variables:
+      is_op: '%player_is_op%'
+    # Expression list. Evaluate in order and return the corresponding output when matched
+    # Expression documentation:
+    # https://ezylang.github.io/EvalEx/references/references.html
+    # If expression parsing fails, an error will be output to the console and the condition will fail
+    statements:
+      - eval: '"${var.is_op}" == "yes"'
+        output: 'Admin'
+    # Value to output when none of the expressions match
+    default: ''

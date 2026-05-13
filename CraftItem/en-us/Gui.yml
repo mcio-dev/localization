@@ -1,0 +1,172 @@
+Title: '&4&nForge Menu' # GUI title
+
+Chest: # Use the items below to build the layout when time forging is not in progress
+  - '黑红灰灰灰灰灰红黑'
+  - '红灰材材材灰物灰红'
+  - '返灰材材材灰灰灰栏'
+  - '红灰材材材灰锻时红'
+  - '黑红灰灰灰灰灰红黑'
+
+ChestTime: # Use the items below to build the layout while time forging is in progress
+  - '黑红灰灰灰灰灰红黑'
+  - '红灰材材材灰物灰红'
+  - '返灰材材材灰灰灰栏'
+  - '红灰材材材灰时灰红'
+  - '黑红灰灰灰灰灰红黑'
+
+Item:
+  # Fixed icons below, do not change their IDs
+  材:
+    Type: ORANGE_STAINED_GLASS_PANE
+    Name: '&eMaterial Slot'
+    Lore:
+      - '&eRequired materials are shown here'
+  物:
+    Type: CHEST
+    Name: '&cItem Slot'
+    Lore:
+      - '&eThe item being forged is shown here'
+  锻:
+    Type: ANVIL
+    Name: '&aClick to Forge'
+    Lore:
+      - ''
+      - '&aInfo:'
+      - '  &8➥ &6Difficulty &e<ChanceName>'
+      - '  &8➥ &6Progress &e<Score>%'
+      - '  &8➥ &6Price &e<CostMoney> <CostCurrency>'
+      - '  &8➥ &6Cost &e<CostLevel> &6levels'
+      - '  &8➥ &6Available Uses &e<LimitCount>'
+  锻_连击:
+    Type: ANVIL
+    Name: '&aClick to Forge'
+    Lore:
+      - ''
+      - '&aInfo:'
+      - '  &8➥ &6Difficulty &e<ChanceName>'
+      - '  &8➥ &6Progress &e<Score>%'
+      - '  &8➥ &6Price &e<CostMoney> <CostCurrency>'
+      - '  &8➥ &6Cost &e<CostLevel> &6levels'
+      - '  &8➥ &6Available Uses &e<LimitCount>'
+      - ''
+      - '&aLeft Click &7| &fForge once'
+      - '&bRight Click &7| &fCombo forge &e<Combo> &ftimes'
+  锻_困难:
+    Type: ANVIL
+    Name: '&aClick to Forge'
+    Lore:
+      - ''
+      - '&aInfo:'
+      - '  &8➥ &cHard recipe requires interactive forging'
+      - '  &8➥ &6Difficulty &e<ChanceName>'
+      - '  &8➥ &6Progress &e<Score>%'
+      - '  &8➥ &6Price &e<CostMoney> <CostCurrency>'
+      - '  &8➥ &6Cost &e<CostLevel> &6levels'
+      - '  &8➥ &6Available Uses &e<LimitCount>'
+  时:
+    Type: CLOCK
+    Name: '&aTime Forge'
+    Lore:
+      - '&7Wait for a while to complete the forging'
+      - ''
+      - '&aInfo:'
+      - '  &8➥ &6Duration &e<Time>'
+      - '  &8➥ &6Price &e<CostMoney> <CostCurrency>'
+      - '  &8➥ &6Cost &e<CostLevel> &6levels'
+      - '  &8➥ &6Available Uses &e<LimitCount>'
+      - ''
+      - '&a&lClick to submit materials and money to start forging'
+  时_未开启:
+    Type: GRAY_STAINED_GLASS_PANE
+    Name: 'Border'
+    Lore: []
+  时_条件不足:
+    Type: BARRIER
+    Name: '&aTime Forge'
+    Lore:
+      - '&7Wait for a while to complete the forging'
+      - ''
+      - '&aInfo:'
+      - '  &8➥ &6Duration &e<Time>'
+      - '  &8➥ &6Price &e<CostMoney> <CostCurrency>'
+      - '  &8➥ &6Cost &e<CostLevel> &6levels'
+      - '  &8➥ &6Available Uses &e<LimitCount>'
+      - ''
+      - '&c&lYou do not meet the requirements for time forging!'
+  时_进行中:
+    Type: IRON_PICKAXE
+    Name: '&aTime Forge'
+    Lore:
+      - '&7Forging in progress...'
+      - ''
+      - '&aInfo:'
+      - '  &8➥ &3Progress &b<Progress>'
+      - '  &8➥ &3Remaining &b<RemainTime>'
+      - '  &8➥ &6Duration &e<Time>'
+      - '  &8➥ &6Price &e<CostMoney> <CostCurrency>'
+      - '  &8➥ &6Cost &e<CostLevel> &6levels'
+      - '  &8➥ &6Available Uses &e<LimitCount>'
+  时_完成:
+    Type: CLOCK
+    Name: '&aTime Forge'
+    Lore:
+      - '&7Forging complete!'
+      - ''
+      - '&aInfo:'
+      - '  &8➥ &3Progress &a100%'
+      - '  &8➥ &6Duration &e<Time>'
+      - '  &8➥ &6Price &e<CostMoney> <CostCurrency>'
+      - '  &8➥ &6Available Uses &e<LimitCount>'
+      - ''
+      - '&a&lClick to claim the forged item'
+  # This is a special decorative icon and can be deleted
+  返:
+    Type: RED_DYE
+    # If the menu is opened by command instead of the category menu, another decorative icon will be shown
+    Redirect: 栏
+    Name: 'Back'
+    Lore: []
+    LeftClick:
+      - '[back]'
+
+  # Decorative items below can be added or changed freely
+  黑:
+    Type: BLACK_STAINED_GLASS_PANE
+    Name: 'Border'
+    Lore: []
+  红:
+    Type: RED_STAINED_GLASS_PANE
+    Name: 'Border'
+    Lore: []
+  灰:
+    Type: GRAY_STAINED_GLASS_PANE
+    Name: 'Border'
+    Lore: []
+  栏:
+    Type: IRON_BARS
+    Name: 'Border'
+    Lore: []
+
+  按:
+    Type: CLOCK
+    Name: 'Button Example'
+    CustomModelData: 10000
+    Lore:
+    - 'This is an example icon and is not added to the menu by default'
+    - ''
+    - 'You can additionally add CustomModelData, LeftClick, RightClick,'
+    - 'ShiftLeftClick, and ShiftRightClick to any button.'
+    - ''
+    - 'CustomModelData needs no further explanation; it is used to modify item appearance'
+    - ''
+    - 'LeftClick and RightClick can make left and right clicking the icon perform actions'
+    - 'Lines starting with [player] run commands as the player'
+    - 'Lines starting with [console] run commands as the console'
+    - 'Lines starting with [message] show a message in the player chat bar'
+    - '[close] closes the menu'
+    - 'Supports PAPI variables'
+    LeftClick:
+    - '[player]spawn'
+    - '[console]dm open cd_main %player_name%'
+    RightClick:
+    - '[message]&f  This is a message  '

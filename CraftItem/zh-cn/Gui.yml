@@ -1,0 +1,172 @@
+Title: '&4&n锻造界面' # 界面的标题
+
+Chest: # 未进行时长锻造 使用下面物品来布局
+  - '黑红灰灰灰灰灰红黑'
+  - '红灰材材材灰物灰红'
+  - '返灰材材材灰灰灰栏'
+  - '红灰材材材灰锻时红'
+  - '黑红灰灰灰灰灰红黑'
+
+ChestTime: # 正在进行时长锻造 使用下面物品来布局
+  - '黑红灰灰灰灰灰红黑'
+  - '红灰材材材灰物灰红'
+  - '返灰材材材灰灰灰栏'
+  - '红灰材材材灰时灰红'
+  - '黑红灰灰灰灰灰红黑'
+
+Item:
+  # 以下为固定图标，ID不要更改
+  材:
+    Type: ORANGE_STAINED_GLASS_PANE
+    Name: '&e材料栏'
+    Lore:
+      - '&e此处显示所需材料'
+  物:
+    Type: CHEST
+    Name: '&c物品栏'
+    Lore:
+      - '&e此处显示在锻造的物品'
+  锻:
+    Type: ANVIL
+    Name: '&a点击锻造'
+    Lore:
+      - ''
+      - '&a信息:'
+      - '  &8➥ &6难度 &e<ChanceName>'
+      - '  &8➥ &6进度 &e<Score>%'
+      - '  &8➥ &6价格 &e<CostMoney> <CostCurrency>'
+      - '  &8➥ &6消耗 &e<CostLevel> &6级经验'
+      - '  &8➥ &6可用次数 &e<LimitCount>'
+  锻_连击:
+    Type: ANVIL
+    Name: '&a点击锻造'
+    Lore:
+      - ''
+      - '&a信息:'
+      - '  &8➥ &6难度 &e<ChanceName>'
+      - '  &8➥ &6进度 &e<Score>%'
+      - '  &8➥ &6价格 &e<CostMoney> <CostCurrency>'
+      - '  &8➥ &6消耗 &e<CostLevel> &6级经验'
+      - '  &8➥ &6可用次数 &e<LimitCount>'
+      - ''
+      - '&a左键 &7| &f锻造一次'
+      - '&b右键 &7| &f连续锻造 &e<Combo> &f次'
+  锻_困难:
+    Type: ANVIL
+    Name: '&a点击锻造'
+    Lore:
+      - ''
+      - '&a信息:'
+      - '  &8➥ &c困难配方 需交互锻造'
+      - '  &8➥ &6难度 &e<ChanceName>'
+      - '  &8➥ &6进度 &e<Score>%'
+      - '  &8➥ &6价格 &e<CostMoney> <CostCurrency>'
+      - '  &8➥ &6消耗 &e<CostLevel> &6级经验'
+      - '  &8➥ &6可用次数 &e<LimitCount>'
+  时:
+    Type: CLOCK
+    Name: '&a时长锻造'
+    Lore:
+      - '&7等待一段时间，即可完成锻造'
+      - ''
+      - '&a信息:'
+      - '  &8➥ &6耗时 &e<Time>'
+      - '  &8➥ &6价格 &e<CostMoney> <CostCurrency>'
+      - '  &8➥ &6消耗 &e<CostLevel> &6级经验'
+      - '  &8➥ &6可用次数 &e<LimitCount>'
+      - ''
+      - '&a&l点击提交材料和金币开始锻造'
+  时_未开启:
+    Type: GRAY_STAINED_GLASS_PANE
+    Name: '边框'
+    Lore: []
+  时_条件不足:
+    Type: BARRIER
+    Name: '&a时长锻造'
+    Lore:
+      - '&7等待一段时间，即可完成锻造'
+      - ''
+      - '&a信息:'
+      - '  &8➥ &6耗时 &e<Time>'
+      - '  &8➥ &6价格 &e<CostMoney> <CostCurrency>'
+      - '  &8➥ &6消耗 &e<CostLevel> &6级经验'
+      - '  &8➥ &6可用次数 &e<LimitCount>'
+      - ''
+      - '&c&l你不满足进行时长锻造的条件!'
+  时_进行中:
+    Type: IRON_PICKAXE
+    Name: '&a时长锻造'
+    Lore:
+      - '&7正在锻造中...'
+      - ''
+      - '&a信息:'
+      - '  &8➥ &3进度 &b<Progress>'
+      - '  &8➥ &3剩余 &b<RemainTime>'
+      - '  &8➥ &6耗时 &e<Time>'
+      - '  &8➥ &6价格 &e<CostMoney> <CostCurrency>'
+      - '  &8➥ &6消耗 &e<CostLevel> &6级经验'
+      - '  &8➥ &6可用次数 &e<LimitCount>'
+  时_完成:
+    Type: CLOCK
+    Name: '&a时长锻造'
+    Lore:
+      - '&7锻造完成!'
+      - ''
+      - '&a信息:'
+      - '  &8➥ &3进度 &a100%'
+      - '  &8➥ &6耗时 &e<Time>'
+      - '  &8➥ &6价格 &e<CostMoney> <CostCurrency>'
+      - '  &8➥ &6可用次数 &e<LimitCount>'
+      - ''
+      - '&a&l点击领取锻造成品'
+  # 这是个特殊的装饰物图标，可以删除
+  返:
+    Type: RED_DYE
+    # 如果菜单是通过命令而不是分类菜单打开的，则显示另外的装饰物图标
+    Redirect: 栏
+    Name: '返回'
+    Lore: []
+    LeftClick:
+      - '[back]'
+
+  # 以下可添加装饰物，随意添加更改
+  黑:
+    Type: BLACK_STAINED_GLASS_PANE
+    Name: '边框'
+    Lore: []
+  红:
+    Type: RED_STAINED_GLASS_PANE
+    Name: '边框'
+    Lore: []
+  灰:
+    Type: GRAY_STAINED_GLASS_PANE
+    Name: '边框'
+    Lore: []
+  栏:
+    Type: IRON_BARS
+    Name: '边框'
+    Lore: []
+
+  按:
+    Type: CLOCK
+    Name: '按钮示例'
+    CustomModelData: 10000
+    Lore:
+    - '这是一个示例图标，默认不添加到菜单中'
+    - ''
+    - '在任意按钮可以额外添加 CustomModelData、LeftClick、RightClick、'
+    - 'ShiftLeftClick、ShiftRightClick。'
+    - ''
+    - 'CustomModelData 不解释，用于修改物品材质'
+    - ''
+    - 'LeftClick 和 RightClick 等可以做到左键、右键点击图标执行操作'
+    - '以 [player] 开头为以玩家身份执行命令'
+    - '以 [console] 开头为以控制台身份执行命令'
+    - '以 [message] 开头在玩家聊天栏显示消息'
+    - '[close] 为关闭菜单'
+    - '支持 PAPI 变量'
+    LeftClick:
+    - '[player]spawn'
+    - '[console]dm open cd_main %player_name%'
+    RightClick:
+    - '[message]&f  这是一条消息  '

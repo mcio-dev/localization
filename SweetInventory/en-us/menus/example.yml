@@ -1,0 +1,54 @@
+title: 'GUI Title %page%/%max_page%'
+inventory:
+  - 'ooooooooo'
+  - 'upppppppd'
+  - 'ooooooooo'
+page-guide:
+  # Which characters in the layout above should be used for paginated content
+  slot: p
+  # The layout for each page. When switching pages, the characters below
+  # will replace the layout characters above in order, and then icons will be applied
+  # Each element in the list (starting with -) represents one page
+  pages:
+    - 'abababa'
+    - 'bababab'
+
+items:
+  frame:
+    # Where this icon should appear in the layout
+    slots: [ o, u, d ]
+    priority: 10
+    material: WHITE_STAINED_GLASS_PANE
+    display: '&fBorder'
+  prev-page:
+    slot: u
+    material: LIME_STAINED_GLASS_PANE
+    display: '&ePrevious Page'
+    view-requirement: page has-prev-page
+    left-click-commands: ['[prev]']
+  next-page:
+    slot: d
+    material: LIME_STAINED_GLASS_PANE
+    display: '&eNext Page'
+    view-requirement: page has-next-page
+    left-click-commands: ['[next]']
+
+  button-1:
+    slot: a
+    material: GRASS_BLOCK
+    display: '&fButton'
+    lore:
+      - ''
+      - '&aLeft Click &7| &fTeleport to spawn'
+      - '&bRight Click &7| &fRestore full health (jk)'
+    left-click-commands:
+      - '[player]spawn'
+    right-click-commands:
+      - '[console]kill %player_name%'
+  button-2:
+    slot: b
+    material: STONE
+    display: '&fButton'
+    lore: []
+    left-click-commands:
+      - '[message]You clicked Button 2'

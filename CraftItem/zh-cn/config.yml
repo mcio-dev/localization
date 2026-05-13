@@ -1,0 +1,210 @@
+Setting:
+  # 储存锻造配方的数据文件路径
+  # 以 ./ 开头则相对于 服务端/plugins/CraftItem 的路径
+  # 反之为相对于 服务端 的路径，或者绝对路径
+  CraftRecipeFile: './Craft.yml'
+  # 成功率所显示的信息
+  ChanceName:
+    "10": "<red><u>九死一生</u>" # 低于等于 10 的概率
+    "20": "<red><u>如履薄冰</u>" # 大于 10 低于等于 20 的概率
+    "30": "<light_purple><u>铤而走险</u>"
+    "40": "<gold><u>铤而走险</u>"
+    "50": "<gold><u>喜忧参半</u>"
+    "60": "<gold><u>半斤八两</u>"
+    "70": "<yellow><u>半斤八两</u>"
+    "80": "<green><u>半斤八两</u>"
+    "90": "<green><u>十拿九稳</u>"
+    "100": "<green><u>百战百胜</u>"
+  # 未知的成功率 (超出了上面提供的数值范围，通常不会出现这种情况)
+  ChanceNameUnknown: "<red><u>未知领域</u>"
+  # 配方相关的配置
+  Category:
+    #示例: <- 类别的 名字/ID
+    #  - "钻石剑" <- 类别包含的配方
+    武器: []
+    防具: []
+    杂项: []
+  # 锻造标题
+  ForgeTitle:
+    Title: "<green>敲敲打打"
+    SubTitle: "<yellow>锻造中..."
+    FadeIn: 10
+    Time: 20
+    FadeOut: 10
+  # 音效
+  Sounds:
+    ClickInventory: UI_BUTTON_CLICK
+    ForgeSuccess: BLOCK_ANVIL_USE
+    ForgeFail: BLOCK_GLASS_BREAK
+    ForgeTitle: BLOCK_ANVIL_LAND
+  # 是否要求玩家拥有 "craftitem.open.配方ID" 权限才能打开相应锻造菜单
+  # 如果玩家没有权限，锻造配方在分类菜单中也不会显示
+  RequirePermission: true
+
+# 使用 LangUtils 时的配置
+LangUtils:
+  Language: zh_cn
+
+# 材料适配器设定
+# cn.jrmcdp.craftitem.func.MaterialAdapterManager
+Material-Adapters:
+  # 是否按材料适配器所获取的 ID，重新生成新物品，展示给玩家
+  Use-New-Icon: false
+
+  # 对于 MMOItems 物品的适配
+  MMOItems:
+    # 是否启用材料适配器。若启用适配器且锻造材料是 MI 物品，则仅匹配物品类型和物品ID，不匹配整个物品
+    enable: true
+
+  # 对于 MythicMobs 物品的适配
+  MythicMobs:
+    # 是否启用材料适配器。若启用适配器且锻造材料是 MM 物品，则仅匹配物品ID，不匹配整个物品
+    enable: true
+
+  # 对于 ItemsAdder 物品的适配
+  ItemsAdder:
+    # 是否启用材料适配器。若启用适配器且锻造材料是 IA 物品，则仅匹配物品命名空间与物品ID，不匹配整个物品
+    enable: true
+
+  # 对于 CustomFishing 物品的适配
+  CustomFishing:
+    # 是否启用材料适配器。若启用适配器且锻造材料是鱼类，则仅匹配物品ID (CustomFishing.id 标签)，不匹配整个物品
+    enable: true
+  # 对于 CraftEngine 物品的适配
+  CraftEngine:
+    # 是否启用材料适配器。若启用适配器且锻造材料是 CE 物品，则仅匹配物品命名空间与物品ID，不匹配整个物品
+    enable: true
+  # 对于 SX-Item 物品的适配
+  SX-Item:
+    # 是否启用材料适配器。若启用适配器且锻造材料是 SX 物品，则仅匹配物品ID，不匹配整个物品
+    enable: true
+
+# 困难锻造随机进行的小游戏列表
+RandomGames:
+  - accurate_click_bar_3_easy
+  - accurate_click_bar_5_easy
+  - accurate_click_bar_7_easy
+  - accurate_click_bar_9_easy
+  - hold_game_easy
+  - tension_game_easy
+
+# 时长锻造条件列表
+# 其中，type 可使用以下类型，所有类型均可在前面加英文感叹号"!"来反转
+# 如 "!=" 代表 "字符串不匹配"，"!>" 代表 "数字不大于" 即 "数字小于等于"
+# input 和 output 为需要比较的两个值，可用 PlaceholderAPI 变量
+#
+# 字符串匹配: = 或 == 或 string equals
+# 字符串忽略大小写匹配: ~== 或 equalsIgnoreCase
+# 数字匹配: number equals
+# 数字大于: >
+# 数字大于或等于: >=
+# 数字小于: <
+# 数字小于或等于: <=
+#
+TimeForgeConditions:
+#  经验等级:
+#    input: '%player_level%'
+#    type: '>='
+#    output: 30
+
+TimeFormat:
+  Hour: '时 '
+  Hours: '时 '
+  Minute: '分 '
+  Minutes: '分 '
+  Second: '秒'
+  Seconds: '秒'
+
+# 时长锻造次数限制组
+# 锻造配方设置中填写这里的组名来使用相关组的限制次数
+CountLimitGroups:
+  # 组名，任意取定，可添加多个组
+  group1:
+    # 拥有 craftitem.time.default 权限的玩家限制 10 次
+    default: 10
+    # 拥有 craftitem.time.vip 权限的玩家限制 20 次，以此类推
+    vip: 20
+
+# 大失败不消失的物品设置
+# 配置会自动替换 & 为 §
+DoNotDisappear:
+  # 以下物品材质不消失
+  Material:
+    - COMMAND_BLOCK
+  # 名字包含以下内容其中之一不消失
+  Name:
+    - '不会消失的物品'
+  # Lore 的某一行包含以下内容其中之一不消失
+  Lore:
+    - '非常稀有 的材料'
+  # 相应的 NBT 标签的值为以下任一内容不消失
+  # NBT标签名(键)不区分大小写
+  NBTString:
+    # 示例，指定的 MMOItems 物品不会消失
+    MMOITEMS_ITEM_ID:
+      - 'TEST_ITEM'
+    # 设为空列表就代表，只要有 DO_NOT_DISAPPEAR 这个标签，物品就不消失
+    DO_NOT_DISAPPEAR: []
+
+# 自定义货币名称显示
+CurrencyNames:
+  Vault: 金币
+  PlayerPoints: 点券
+  MPoints:
+    sign: 点数
+  NyEconomy:
+    type: 点数
+
+# 触发事件执行命令
+# [console] 开头以管理员权限执行
+# [player] 开头以玩家权限执行
+# [message] 向玩家发送消息
+# 支持 PAPI 变量
+Events:
+  # 锻造失败时执行
+  # 额外变量：
+  # %craft% 配方名
+  # %modifier% 失败程度，-1 小失败，0 失败，1 大失败
+  # %progress% 失败后的进度
+  # %value% 失败后减少的进度
+  ForgeFail: []
+  # 锻造成功时执行
+  # 额外变量：
+  # %craft% 配方名
+  # %modifier% 成功程度，-1 小成功，0 成功，1 大成功
+  # %progress% 成功后的进度
+  # %value% 成功后增加的进度
+  ForgeSuccess: []
+  # 锻造完成 (进度达到 100% 时执行)
+  # 注意，ForgeSuccess 和 ForgeDone 会在锻造完成时同时执行，先执行 Success 再执行 Done
+  # 额外变量:
+  # %craft% 配方名
+  ForgeDone: []
+  # 覆盖锻造完成后重新打开菜单的动作，如果列表为空，则不覆盖
+  # 可用 '[reopen]' 重新打开菜单
+  ReopenGui: []
+
+# Offset characters' unicodes
+# Never edit this unless you know what you are doing
+# 贴图位移字符配置
+# 如果你不知道你在做什么，请勿修改这里的值
+offset-characters:
+  # 字体路径，如果你修改了默认材质包的命名空间 (默认 mrxiaom)，
+  # 则需要修改该选项
+  font: mrxiaom:offset_chars
+  '1': 
+  '2': 
+  '4': 
+  '8': 
+  '16': 
+  '32': 
+  '64': 
+  '128': 
+  '-1': 
+  '-2': 
+  '-4': 
+  '-8': 
+  '-16': 
+  '-32': 
+  '-64': 
+  '-128': 

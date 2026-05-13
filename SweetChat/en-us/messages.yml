@@ -1,8 +1,24 @@
 messages:
   chat-exception: '&eFailed to send chat message, logs have been output to console, please contact server administrator'
   commands:
+    help:
+      admin:
+      - '&b&lSweetChat Help Commands'
+      - '&f/chat mode <mode/clear> [player] &eSet a player''s default chat mode'
+      - '&f/chat sudo <player> […message content] &eSend a message as an online player'
+      - '&f/chat reload &eReload the plugin configuration files'
+      - '&f/chat reload database &eReload and reconnect the database'
+      player:
+      - '&b&lSweetChat Help Commands'
+      - '&f/chat mode <mode/clear> &eSet the default chat mode'
+    mode:
+      clear: '&aDefault chat mode setting has been cleared'
+      not-found: '&eThe specified chat mode could not be found &7(or no permission)'
+      set: '&aDefault chat mode has been set to &e%mode%'
     reload:
       config: '&aConfiguration file has been reloaded'
       database: '&aDatabase has been reloaded and reconnected'
+    no-permission: '&cYou do not have permission to execute this command'
   player:
     not-online: Player %player% is not online (or does not exist)
+    only: This command can only be executed by a player

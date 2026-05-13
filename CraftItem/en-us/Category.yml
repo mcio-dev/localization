@@ -1,0 +1,44 @@
+Title: '§4§nForge Menu§0 Current Category <Category>' # GUI title
+
+Chest: # Use the items below to build the layout
+  - '黑红灰灰灰灰灰红黑'
+  - '红方方方方方方方红'
+  - '上方方方方方方方下'
+  - '红方方方方方方方红'
+  - '黑红灰灰灰灰灰红黑'
+
+Item:
+  # Fixed icons below, do not change their IDs
+  上:
+    Type: ARROW
+    Name: '§aPrevious Page'
+    Lore:
+      - '§7Click to turn page'
+  下:
+    Type: ARROW
+    Name: '§aNext Page'
+    Lore:
+      - '§7Click to turn page'
+
+
+  # Decorative items below can be added or changed freely
+  黑:
+    Type: BLACK_STAINED_GLASS_PANE
+    Name: 'Border'
+    Lore:
+      - 'Decoration'
+  红:
+    Type: RED_STAINED_GLASS_PANE
+    Name: 'Border'
+    Lore:
+      - 'Decoration'
+  灰:
+    Type: GRAY_STAINED_GLASS_PANE
+    Name: 'Border'
+    Lore:
+      - 'Decoration'
+  栏:
+    Type: IRON_BARS
+    Name: 'Border'
+    Lore:
+      - 'Decoration'

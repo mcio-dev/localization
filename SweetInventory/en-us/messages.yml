@@ -1,0 +1,18 @@
+messages:
+  no-permission: '&cYou do not have permission to perform this action'
+  command:
+    open:
+      no-menu-found: '&cMenu not found: &e%menu%'
+    list:
+      header:
+      - '&e&lMenu List: '
+      footer: []
+      entry:
+      - '  &8· &f%menu%'
+    reload:
+      success: '&aConfiguration files have been reloaded'
+    execute:
+      parse-failed: '&eFailed to parse the input as an executable action'
+  player:
+    not-online: '&cThe player is not online &7(or does not exist)'
+    only: Only players can perform this action

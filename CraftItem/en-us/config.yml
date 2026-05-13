@@ -1,0 +1,216 @@
+Setting:
+  # Data file path used to store forge recipes
+  # If it starts with ./, it is relative to server/plugins/CraftItem
+  # Otherwise it is relative to the server root, or an absolute path
+  CraftRecipeFile: './Craft.yml'
+  # Text displayed for success rates
+  ChanceName:
+    "10": "<red><u>Nine Deaths, One Life</u>" # Chance less than or equal to 10
+    "20": "<red><u>Walking on Thin Ice</u>" # Chance greater than 10 and less than or equal to 20
+    "30": "<light_purple><u>Risking It All</u>"
+    "40": "<gold><u>Risking It All</u>"
+    "50": "<gold><u>Mixed Blessings</u>"
+    "60": "<gold><u>About Even</u>"
+    "70": "<yellow><u>About Even</u>"
+    "80": "<green><u>About Even</u>"
+    "90": "<green><u>Almost Certain</u>"
+    "100": "<green><u>Always Victorious</u>"
+  # Unknown success rate (outside the value range provided above; this normally should not happen)
+  ChanceNameUnknown: "<red><u>Unknown Territory</u>"
+  # Recipe-related settings
+  Category:
+    # Example: <- category name/ID
+    #  - "Diamond Sword" <- recipes included in this category
+    Weapons: []
+    Armor: []
+    Misc: []
+  # Forging title
+  ForgeTitle:
+    Title: "<green>Clang Clang"
+    SubTitle: "<yellow>Forging..."
+    FadeIn: 10
+    Time: 20
+    FadeOut: 10
+  # Sound effects
+  Sounds:
+    ClickInventory: UI_BUTTON_CLICK
+    ForgeSuccess: BLOCK_ANVIL_USE
+    ForgeFail: BLOCK_GLASS_BREAK
+    ForgeTitle: BLOCK_ANVIL_LAND
+  # Whether players must have the permission "craftitem.open.recipeID" to open the corresponding forge menu
+  # If the player does not have permission, the forge recipe will also not be shown in the category menu
+  RequirePermission: true
+
+# Settings used with LangUtils
+LangUtils:
+  Language: en_us
+
+# Material adapter settings
+# cn.jrmcdp.craftitem.func.MaterialAdapterManager
+Material-Adapters:
+  # Whether to regenerate a new item based on the ID obtained by the material adapter for display to players
+  Use-New-Icon: false
+
+  # Adapting MMOItems items
+  MMOItems:
+    # Whether to enable the material adapter. If enabled and the forge material is an MI item,
+    # only the item type and item ID are matched, not the entire item
+    enable: true
+
+  # Adapting MythicMobs items
+  MythicMobs:
+    # Whether to enable the material adapter. If enabled and the forge material is an MM item,
+    # only the item ID is matched, not the entire item
+    enable: true
+
+  # Adapting ItemsAdder items
+  ItemsAdder:
+    # Whether to enable the material adapter. If enabled and the forge material is an IA item,
+    # only the item namespace and item ID are matched, not the entire item
+    enable: true
+
+  # Adapting CustomFishing items
+  CustomFishing:
+    # Whether to enable the material adapter. If enabled and the forge material is a fish,
+    # only the item ID (CustomFishing.id tag) is matched, not the entire item
+    enable: true
+  # Adapting CraftEngine items
+  CraftEngine:
+    # Whether to enable the material adapter. If enabled and the forge material is a CE item,
+    # only the item namespace and item ID are matched, not the entire item
+    enable: true
+  # Adapting SX-Item items
+  SX-Item:
+    # Whether to enable the material adapter. If enabled and the forge material is an SX item,
+    # only the item ID is matched, not the entire item
+    enable: true
+
+# List of minigames randomly used for hard forging
+RandomGames:
+  - accurate_click_bar_3_easy
+  - accurate_click_bar_5_easy
+  - accurate_click_bar_7_easy
+  - accurate_click_bar_9_easy
+  - hold_game_easy
+  - tension_game_easy
+
+# Time forge condition list
+# The following types can be used for type, and every type can be prefixed with "!" to invert it
+# For example, "!=" means "string does not match", and "!>" means "number is not greater than", i.e. "number is less than or equal to"
+# input and output are the two values to compare, and PlaceholderAPI variables can be used
+#
+# String match: = or == or string equals
+# String case-insensitive match: ~== or equalsIgnoreCase
+# Number match: number equals
+# Number greater than: >
+# Number greater than or equal to: >=
+# Number less than: <
+# Number less than or equal to: <=
+#
+TimeForgeConditions:
+#  Experience levels:
+#    input: '%player_level%'
+#    type: '>='
+#    output: 30
+
+TimeFormat:
+  Hour: 'h '
+  Hours: 'h '
+  Minute: 'm '
+  Minutes: 'm '
+  Second: 's'
+  Seconds: 's'
+
+# Time forge usage limit groups
+# Fill in the group name from here in forge recipe settings to use the corresponding limit count
+CountLimitGroups:
+  # Group name, can be any name, and you can add multiple groups
+  group1:
+    # Players with the craftitem.time.default permission are limited to 10 times
+    default: 10
+    # Players with the craftitem.time.vip permission are limited to 20 times, and so on
+    vip: 20
+
+# Settings for items that do not disappear on major failure
+# The configuration automatically replaces & with §
+DoNotDisappear:
+  # Items with the following materials will not disappear
+  Material:
+    - COMMAND_BLOCK
+  # If the name contains any of the following contents, it will not disappear
+  Name:
+    - 'Item That Will Not Disappear'
+  # If any line of lore contains any of the following contents, it will not disappear
+  Lore:
+    - 'Very Rare Material'
+  # If the value of the corresponding NBT tag is any of the following, it will not disappear
+  # NBT tag names (keys) are case-insensitive
+  NBTString:
+    # Example: the specified MMOItems item will not disappear
+    MMOITEMS_ITEM_ID:
+      - 'TEST_ITEM'
+    # Setting an empty list means as long as the DO_NOT_DISAPPEAR tag exists, the item will not disappear
+    DO_NOT_DISAPPEAR: []
+
+# Custom currency display names
+CurrencyNames:
+  Vault: Coins
+  PlayerPoints: Points
+  MPoints:
+    sign: Points
+  NyEconomy:
+    type: Points
+
+# Execute commands when events are triggered
+# Prefix with [console] to execute as console
+# Prefix with [player] to execute as player
+# Prefix with [message] to send a message to the player
+# Supports PAPI variables
+Events:
+  # Executed when forging fails
+  # Extra variables:
+  # %craft% recipe name
+  # %modifier% failure severity, -1 small failure, 0 failure, 1 major failure
+  # %progress% progress after failure
+  # %value% progress reduced after failure
+  ForgeFail: []
+  # Executed when forging succeeds
+  # Extra variables:
+  # %craft% recipe name
+  # %modifier% success severity, -1 small success, 0 success, 1 major success
+  # %progress% progress after success
+  # %value% progress increased after success
+  ForgeSuccess: []
+  # Forging completed (executed when progress reaches 100%)
+  # Note: ForgeSuccess and ForgeDone are both executed when forging completes; Success runs before Done
+  # Extra variables:
+  # %craft% recipe name
+  ForgeDone: []
+  # Overrides the action of reopening the menu after forging completes; if the list is empty, it will not override
+  # Use '[reopen]' to reopen the menu
+  ReopenGui: []
+
+# Offset characters' unicodes
+# Never edit this unless you know what you are doing
+# Texture offset character configuration
+# Do not modify these values unless you know what you are doing
+offset-characters:
+  # Font path. If you changed the namespace of the default resource pack (default is mrxiaom),
+  # then you need to modify this option
+  font: mrxiaom:offset_chars
+  '1': 
+  '2': 
+  '4': 
+  '8': 
+  '16': 
+  '32': 
+  '64': 
+  '128': 
+  '-1': 
+  '-2': 
+  '-4': 
+  '-8': 
+  '-16': 
+  '-32': 
+  '-64': 
+  '-128': 

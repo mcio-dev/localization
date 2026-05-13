@@ -1,0 +1,10 @@
+# Add extra menus folder paths
+# This allows multiple sub-servers on the same machine to share part of their menus
+# If file names (menu IDs) conflict, the main menus folder takes priority
+extra-menus-folders: []
+
+# File watcher settings
+# Automatically reload a single menu when a file changes, and automatically unload a menu when a file is deleted
+file-watcher:
+  enable: true
+  interval: 1000

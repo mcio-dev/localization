@@ -1,0 +1,243 @@
+gui:
+  craft-info:
+    lore:
+      command: ' &8➥ &e%s'
+      header:
+      - ''
+      - '&aContains:'
+      item: ' &8➥ &e%s&fx%d'
+  edit:
+    item:
+      material:
+        lore:
+        - '&7Click to view/edit'
+        - ''
+        - '&7Current:'
+        - '%s'
+        too-much: '&eYou placed too many materials! They exceed what the GUI can display, so players will not be able to see the full material list in the interface.&bPlease adjust the material list or the GUI configuration.'
+        name: '&aMaterials'
+      multiple:
+        lore:
+        - '&7Click to edit'
+        - '&7Format "5 10 20"'
+        - '&7Corresponds to the increase/decrease values of'
+        - '&7small/medium/big fail/success'
+        - ''
+        - '&7Current: &e%s'
+        name: '&aMultiplier'
+      cost:
+        description:
+        - '&7Click to view/edit'
+        - '&7Use a positive integer'
+        - ''
+        - '&7Current: &e%money% %currency%'
+        name: '&aPrice'
+      display:
+        name: '&aDisplay Item'
+        lore:
+        - '&7Click to view/edit'
+        - '&7The visible appearance of the item'
+        - ''
+        - '&7Current: &e%s'
+      combo:
+        name: '&aCombo Count'
+        lore:
+        - '&7Left click to increase by 1'
+        - '&7Right click to decrease by 1'
+        - '&7Shift+Left click to increase by 10'
+        - '&7Shift+Right click to decrease by 10'
+        - ''
+        - '&7After setting the combo count, players can'
+        - '&7right-click during normal forging to perform'
+        - '&7multiple forging attempts in a combo.'
+        - '&7If a major failure causes insufficient materials,'
+        - '&7the combo will stop and current progress is kept.'
+        - ''
+        - '&7Combo count per use: &e%s'
+      successful-rate:
+        lore:
+        - '&7Click to edit'
+        - '&7Use a positive integer'
+        - ''
+        - '&7Current: &e%d'
+        name: '&aSuccess Rate'
+      cost-level:
+        name: '&aXP Level Cost'
+        lore:
+        - '&7Click to view/edit'
+        - '&7Use a positive integer'
+        - ''
+        - '&7Current: &e%d'
+      difficult:
+        lore:
+        - '&7Left click to toggle'
+        - ''
+        - '&7After enabling hard forging, normal hammer forging'
+        - '&7will be replaced with a CustomFishing minigame.'
+        - '&7If the minigame fails, the forge fails.'
+        - '&7If it succeeds, the normal success chance'
+        - '&7will then be calculated.'
+        - ''
+        - '&7Status: %s'
+        name: '&aHard Forging'
+      time-count-limit:
+        lore:
+        - '&7Left click to select limit group for normal/hard forging'
+        - '&7Right click to remove limit group for normal/hard forging'
+        - ''
+        - '&7Shift+Left click to select limit group for time forging'
+        - '&7Shift+Right click to remove limit group for time forging'
+        - ''
+        - '&7After setting forge count limits, players can only'
+        - '&7perform the specified type of forging a limited number'
+        - '&7of times. Once exceeded, that type can no longer be used.'
+        - '&7See config.yml for detailed limit group settings.'
+        - ''
+        - '&7Normal/Hard forging limit group: &e%s'
+        - '&7Time forging limit group: &e%s'
+        name: '&aForge Count Limit'
+      fail-times:
+        name: '&aPity Count'
+        lore:
+        - '&7Left click to increase by 1'
+        - '&7Right click to decrease by 1'
+        - '&7Shift+Left click to increase by 10'
+        - '&7Shift+Right click to decrease by 10'
+        - ''
+        - '&7After setting the pity count, when failures exceed'
+        - '&7this amount, all types of failures become a small success'
+        - ''
+        - '&7Pity count: &e%s'
+      time:
+        description:
+        - '&7Left click to increase by 1 minute'
+        - '&7Right click to decrease by 1 minute'
+        - '&7Shift+Left click to increase by 10 minutes'
+        - '&7Shift+Right click to decrease by 10 minutes'
+        - '&7Hover and press Q to set required money'
+        - ''
+        - '&7When time is greater than 0, a "Time Forge" option'
+        - '&7will be added to the forging interface.'
+        - '&7Players can choose time forging, spend some money,'
+        - '&7and wait for a period of time to get the reward'
+        - '&7without hammer forging.'
+        - ''
+        - '&7Current duration: &f%time%'
+        - '&7Money cost: &f%money% %currency%'
+        name: '&aForge Duration'
+      item:
+        name: '&aReward Item'
+        lore:
+        - '&7Click to view/edit'
+        - '&7The item given after successful forging'
+        - ''
+        - '&7Current:'
+        - '%s'
+      command:
+        name: '&aReward Command'
+        lore:
+        - '&7Click to view/edit'
+        - '&7Format "say This plugin is awesome||Server says this plugin is awesome"'
+        - '&7Separate with ||, left is the command and right is the displayed description'
+        - '&7PAPI variables are supported here'
+        - '&7The command executed after successful forging'
+        - ''
+        - '&7Current:'
+        - '%s'
+    status:
+      'on': '&aEnabled'
+      'off': '&cDisabled'
+    currency:
+      not-available: '&eCurrency type %currency% is unavailable'
+    unset: '&fUnset'
+  edit-input-chance: '&aPlease enter a chance as a positive integer'
+  edit-item-title: Reward Item
+  edit-command-tips:
+  - '&aPlease send the command in chat &7(no leading / required)&a, PAPI variables supported'
+  - '  &aFormat: &ecommand||display text'
+  - '  &aExample: &esay This plugin is awesome||Server says this plugin is awesome'
+  edit-input-multiple: '&aPlease enter the multiplier in the format "5 10 20" (small medium big)'
+  edit-time-limit-count-title-time: '&0Select Time Forge Limit Group'
+  edit-display-title: Place the item to display in the first slot
+  category:
+    not-found: '&cCould not find &e%s'
+  edit-title: '&0Editing %s'
+  edit-command-title: Reward Command (click empty slot to add)
+  edit-input-cost-level: '&aPlease enter XP levels as a positive integer'
+  edit-time-cost-currency-sum:
+    tips:
+    - '&aModify values with the following format using positive integers'
+    - '&e  M+value &fchanges time forge price, e.g. &eM100 &fconsumes 100 coins'
+    - '&e  M+value+space+currency &fchanges time forge price, e.g. &eM100 PlayerPoints &fconsumes 100 points'
+    - '&fCurrency format can use&e PluginName:CurrencyName &ffor example&e CoinsEngine:Example'
+    - '&e  L+value &fchanges time forge XP level cost, e.g. &eL3 &fconsumes 3 levels'
+    wrong-type: '&eInvalid time forge cost input format'
+  edit-input-cost-currency:
+  - '&aModify forge price with the following format using positive integers'
+  - '&e  value &fchanges forge price, e.g. &e100 &fconsumes 100 coins'
+  - '&e  value+space+currency &fchanges forge price, e.g. &e100 PlayerPoints &fconsumes 100 points'
+  - '&fCurrency format can use&e PluginName:CurrencyName &ffor example&e CoinsEngine:Example'
+  edit-command-lore:
+  - ''
+  - '&4Click to delete'
+  edit-display-not-found: '&cNo item found in the first slot'
+  edit-time-limit-count-title-normal: '&0Select Normal/Hard Forge Limit Group'
+  edit-material-title: '&0Materials'
+prefix: '&4&lCraftItem &8>> &e'
+craft:
+  time-forge-limit: '&eYou have reached the time forge limit&7 (%d)'
+  process-success-big: '&aForge Major Success!!! &f&l[ &a+ &e%d%% &f&l]'
+  time-start: '&aTime forging has started. Open the forge book again after the timer ends to complete the forge successfully. You can also check the progress and remaining time in the forge book.'
+  process-success-small: '&aForge Small Success!!! &f&l[ &a+ &e%d%% &f&l]'
+  not-enough-level: '&eNot enough XP levels to forge.'
+  process-success-medium: '&aForge Success!!! &f&l[ &a+ &e%d%% &f&l]'
+  process-fail-medium: '&cForge Failed!!! &f&l[ &c- &e%d%% &f&l]'
+  forge-limit: '&eYou have reached the forge limit&7 (%d)'
+  process-fail-lost-item: '&cAnd &e%d &cof &e%s&c were damaged.'
+  not-enough-material-details: '&7Requires %s&7 (&f%d &7/ &f%d&7).'
+  currency-not-available: '&eThe currency type for this forge recipe is unavailable'
+  not-enough-material: '&eYou do not have enough materials.'
+  limited: '&e%d &7/ &e%d'
+  success: '&aSuccessfully forged &e%s&a.'
+  process-fail-small: '&cForge Small Failure!!! &f&l[ &c- &e%d%% &f&l]'
+  not-found: '&cCould not find &e%s&c.'
+  edit-not-confirm:
+  - ''
+  - '  &e&lWarning&f You are attempting to edit a configuration file shared with other servers.'
+  - '  &fPlease make sure no other administrator is editing it on another server, or your changes'
+  - '  &fmay overwrite theirs.'
+  - '  &fPlease perform a reload before editing to avoid overwriting changes from other servers.'
+  - '  &bAfter reading and understanding the warning above, use the following command to confirm editing'
+  - '  &e/craftitem %command% confirm'
+  not-enough-currency: '&eNot enough %currency% to forge.'
+  unlimited: '&bUnlimited'
+  process-fail-big: '&cForge Major Failure!!! &f&l[ &c- &e%d%% &f&l]'
+delete:
+  done: '&aSuccessfully deleted &e%s&c.'
+not-expected: '&eUnexpected parameter&7(%s)&e, please contact the server administrator'
+reload-database: '&aReconnected to the database.'
+no-player: '&eThis command can only be executed by players.'
+not-integer: '&aPlease enter an integer'
+create:
+  found: '&c&e%s &calready exists.'
+reload-no-database: '&aYAML is currently used for data storage, no database reconnection is required.'
+full-inventory: '&cYour inventory is full, &d%s&ex%d &chas dropped out.'
+page:
+  already-last: '&eThis is already the last page.'
+  already-first: '&eThis is already the first page.'
+no-protocollib: '&eProtocolLib dependency is not installed on the server.'
+category:
+  not-found: '&cCould not find &e%s&c.'
+reload: '&aConfiguration files reloaded successfully.'
+no-minigames: '&eNo hard forging minigame list configured &7(config.yml:RandomGames)&e, please contact the server administrator'
+not-online: '&cPlayer is offline or does not exist.'
+help:
+- '&4&lCraftItem'
+- '  &8➥ &b/ci Category <TypeID> [Player] &7Open the recipe category menu for yourself/others'
+- '  &8➥ &b/ci Open <ItemID> [Player] &7Open the forge menu for yourself/others'
+- '  &8➥ &b/ci Get <ItemID> [Player] &7Give yourself/others the reward after successful forging'
+- '  &8➥ &b/ci Create <ItemID> &7Create a forge recipe'
+- '  &8➥ &b/ci Delete <ItemID> &7Delete a forge recipe'
+- '  &8➥ &b/ci Edit <ItemID> &7Edit a forge recipe'
+- '  &8➥ &b/ci Reload &7Reload configuration files'
+no-permission: '&cMissing permission &e%s&c.'

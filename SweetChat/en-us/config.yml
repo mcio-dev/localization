@@ -16,7 +16,7 @@ chat-mode:
   default-mode: GLOBAL
   # What prefix to add to quickly switch chat modes
   switch-mode-prefix:
-    '!': GLOBAL
+    '!': GLOBAL|LOCAL
   # Whether to cancel the event and disable vanilla chat when no chat format matches
   # And execute the specified action for sending prompts
   cancel-event-when-no-format-match:

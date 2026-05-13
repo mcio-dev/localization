@@ -1,8 +1,24 @@
 messages:
   chat-exception: '&e聊天消息发送失败，日志已输出到控制台，请联系服务器管理员'
   commands:
+    help:
+      admin:
+      - '&b&lSweetChat 帮助命令'
+      - '&f/chat mode <模式/clear> [玩家] &e设置玩家的默认聊天模式'
+      - '&f/chat sudo <玩家> […消息内容] &e以某个在线玩家的身份发送消息'
+      - '&f/chat reload &e重载插件配置文件'
+      - '&f/chat reload database &e重载并重新连接数据库'
+      player:
+      - '&b&lSweetChat 帮助命令'
+      - '&f/chat mode <模式/clear> &e设置默认聊天模式'
+    mode:
+      clear: '&a已清除默认聊天模式设置'
+      not-found: '&e找不到指定的聊天模式 &7(或无权限)'
+      set: '&a已设置默认聊天模式为 &e%mode%'
     reload:
       config: '&a配置文件已重载'
       database: '&a已重载并重新连接数据库'
+    no-permission: '&c你没有执行该命令的权限'
   player:
-    not-online: 玩家 %player% 不在线 (或不存在)
+    not-online: '&e玩家 %player% 不在线 (或不存在)'
+    only: 该命令只能由玩家执行

@@ -1,0 +1,18 @@
+messages:
+  no-permission: '&c你没有执行该操作的权限'
+  command:
+    open:
+      no-menu-found: '&c找不到菜单&e %menu%'
+    list:
+      header:
+      - '&e&l菜单列表: '
+      footer: []
+      entry:
+      - '  &8· &f%menu%'
+    reload:
+      success: '&a配置文件已重载'
+    execute:
+      parse-failed: '&e无法解析输入内容为可执行操作'
+  player:
+    not-online: '&c玩家不在线 &7(或不存在)'
+    only: 只有玩家才能执行该操作
